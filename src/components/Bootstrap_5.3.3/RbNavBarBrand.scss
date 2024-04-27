@@ -1,0 +1,30 @@
+// Версия 1.01 от 27.04.2024
+
+.navbar-brand {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 0.875em;
+  white-space: normal;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 1.875rem;
+  }
+
+  div {
+    flex-wrap: wrap;
+
+    &:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .navbar-brand-image-light {
+    filter: brightness(0%) invert(100%);
+  }
+
+  .navbar-brand-image-dark {
+    filter: brightness(0%);
+  }
+}

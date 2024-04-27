@@ -1,0 +1,75 @@
+// Версия 1.01 от 27.04.2024
+
+.dropdown-item {
+  .icon + * {
+    margin-left: 0.5em;
+  }
+}
+
+.offcanvas.show {
+  @mixin static-dropdown-menu-item {
+    .offcanvas-body {
+      .dropdown-menu {
+        .dropdown-item {
+          padding: 0.4375rem 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    &.offcanvas-sm {
+      @include static-dropdown-menu-item;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &.offcanvas-md {
+      @include static-dropdown-menu-item;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &.offcanvas-lg {
+      @include static-dropdown-menu-item;
+    }
+  }
+
+  @media (max-width: 1199.98px) {
+    &.offcanvas-xl {
+      @include static-dropdown-menu-item;
+    }
+  }
+}
+
+@mixin static-dropdown-menu {
+  .navbar-collapse.show,
+  .navbar-collapse.collapsing {
+    .dropdown-menu {
+      .dropdown-item {
+        padding: 0.4375rem 0.5rem;
+      }
+    }
+  }
+}
+
+.navbar-expand-sm {
+  @media (max-width: 575.98px) {
+    @include static-dropdown-menu;
+  }
+}
+.navbar-expand-md {
+  @media (max-width: 767.98px) {
+    @include static-dropdown-menu;
+  }
+}
+.navbar-expand-lg {
+  @media (max-width: 991.98px) {
+    @include static-dropdown-menu;
+  }
+}
+.navbar-expand-xl {
+  @media (max-width: 1199.98px) {
+    @include static-dropdown-menu;
+  }
+}

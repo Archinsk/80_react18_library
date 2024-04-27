@@ -1,0 +1,74 @@
+// Версия 1.01 от 27.04.2024
+
+@mixin btn-square {
+  &:not(.btn-sm, .btn-lg) {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+  &.btn-sm {
+    width: 1.9375rem;
+    height: 1.9375rem;
+  }
+  &.btn-lg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-square {
+  @include btn-square;
+}
+
+.btn-icon,
+.btn-square {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon + * {
+    margin-left: 0.5em;
+  }
+}
+
+@mixin btn-square-on-point {
+  .icon + *:not(.badge) {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .btn-square-sm {
+    @include btn-square;
+    @include btn-square-on-point;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-square-md {
+    @include btn-square;
+    @include btn-square-on-point;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-square-lg {
+    @include btn-square;
+    @include btn-square-on-point;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-square-xl {
+    @include btn-square;
+    @include btn-square-on-point;
+  }
+}
+
+.btn-badge {
+  position: relative;
+}

@@ -1,33 +1,25 @@
-import RbIcon from "../components/Bootstrap_5.3.3/RbIcon";
+import RbBadge from "../components/Bootstrap_5.3.3/RbBadge";
 
-function IconRoute() {
+function BadgeRoute() {
   return (
     <>
-      Icon Route
+      Badge Route
       <h3>Варианты использования</h3>
-      <div>Внутри текста</div>
-      <div>Lorem ipsum dolor.</div>
-      <div>
-        Lor
-        <RbIcon name="favorite" />
-        em ip
-        <RbIcon name="star" />
-        sum dolor.
-      </div>
-      <h2>Lorem ipsum dolor.</h2>
-      <h2>
-        Lor
-        <RbIcon name="star" />
-        em ip
-        <RbIcon name="favorite" />
-        sum dolor.
-      </h2>
-      {/* <div>Внутри кнопки</div>
-      <vb-button theme="primary" icon="star" class="mr-3">Кнопка</vb-button>
-      <vb-button theme="primary" icon="star" square class="mr-3"
-        >Кнопка</vb-button
-      >
-      <div>Внутри пунктов меню (Navlink, ButtonLink, DropdownItem)</div>
+      <div>Без value, с темой</div>
+      <RbBadge theme="info">Важно!</RbBadge>
+      <div>Скруглённый, с темой</div>
+      <RbBadge theme="warning" pill>
+        Внимание
+      </RbBadge>
+      <div>Со значением</div>
+      <RbBadge value="10" />
+      <div>С указанием максимального значения и его превышением</div>
+      <RbBadge value="120" theme="danger" max="99" />
+      <div>С отображением нулевого значения</div>
+      <RbBadge value="0" theme="danger" />
+      <div>Без отображения нулевого значения</div>
+      <RbBadge value="0" theme="danger" notNullDisplay />
+      {/* <div>Внутри BS46NavLink</div>
       <vb-nav tag="ul" class="navbar-nav">
         <template v-for="navLink of defaultNav.itemsList">
           <vb-nav-item
@@ -73,9 +65,11 @@ function IconRoute() {
             </template>
           </vb-nav-item>
         </template>
-      </vb-nav>*/}
+      </vb-nav>
+      <div>Внутри BS46Button</div>
+      <vb-button theme="secondary" :badge="defaultBadge">Сообщения</vb-button> */}
     </>
   );
 }
 
-export default IconRoute;
+export default BadgeRoute;
