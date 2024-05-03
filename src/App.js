@@ -10,6 +10,13 @@ import CollapseRoute from "./routes/CollapseRoute";
 import CollapseButtonRoute from "./routes/CollapseButtonRoute";
 import NavBarBrandRoute from "./routes/NavBarBrandRoute";
 import NavBarRoute from "./routes/NavBarRoute";
+import ModalButtonRoute from "./routes/ModalButtonRoute";
+import NavLinkRoute from "./routes/NavLinkRoute";
+import NavItemRoute from "./routes/NavItemRoute";
+import NavRoute from "./routes/NavRoute";
+import OffcanvasButtonRoute from "./routes/OffcanvasButtonRoute";
+import OffcanvasRoute from "./routes/OffcanvasRoute";
+import HeaderRoute from "./routes/HeaderRoute";
 
 function App() {
   return (
@@ -24,7 +31,13 @@ function App() {
         <Link to="/button">Button</Link> | <Link to="/collapse">Collapse</Link>{" "}
         | <Link to="/collapsebutton">CollapseButton</Link> |{" "}
         <Link to="/navbarbrand">NavBarBrand</Link> |{" "}
-        <Link to="/navbar">NavBar</Link>
+        <Link to="/navbar">NavBar</Link> |{" "}
+        <Link to="/modalbutton">ModalButton</Link> |{" "}
+        <Link to="/navlink">NavLink</Link> | <Link to="/navitem">NavItem</Link>{" "}
+        | <Link to="/nav">Nav</Link> |{" "}
+        <Link to="/offcanvasbutton">OffcanvasButton</Link> |{" "}
+        <Link to="/offcanvas">Offcanvas</Link> |{" "}
+        <Link to="/header">Header</Link>
       </nav>
       <Routes>
         <Route path="/" element={<HomeRoute />} />
@@ -37,6 +50,13 @@ function App() {
         <Route path="/collapsebutton" element={<CollapseButtonRoute />} />
         <Route path="/navbarbrand" element={<NavBarBrandRoute />} />
         <Route path="/navbar" element={<NavBarRoute />} />
+        <Route path="/modalbutton" element={<ModalButtonRoute />} />
+        <Route path="/navlink" element={<NavLinkRoute />} />
+        <Route path="/navitem" element={<NavItemRoute />} />
+        <Route path="/nav" element={<NavRoute />} />
+        <Route path="/offcanvasbutton" element={<OffcanvasButtonRoute />} />
+        <Route path="/offcanvas" element={<OffcanvasRoute />} />
+        <Route path="/header" element={<HeaderRoute />} />
       </Routes>
     </div>
   );

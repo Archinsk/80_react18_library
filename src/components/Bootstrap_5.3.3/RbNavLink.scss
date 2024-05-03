@@ -1,0 +1,31 @@
+.nav-link {
+  padding-top: 0.4375rem;
+  padding-bottom: 0.4375rem;
+
+  .icon + * {
+    margin-left: 0.5em;
+  }
+}
+
+.offcanvas.show {
+  .offcanvas-body {
+    .dropdown {
+      .dropdown-toggle {
+        padding: 0.4375rem 0;
+      }
+    }
+    .nav-link {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  .dropdown {
+    .dropdown-toggle {
+      padding: 0.4375rem 0;
+    }
+  }
+}
