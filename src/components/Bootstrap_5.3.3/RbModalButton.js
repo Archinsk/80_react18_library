@@ -1,5 +1,6 @@
+// Версия 1.01 от 07.05.2024
+
 import React from "react";
-//import "./RbModalButton.scss";
 import RbButtonLink from "./RbButtonLink";
 import RbButton from "./RbButton";
 
@@ -38,7 +39,7 @@ function RbModalButton({
   } else {
     return (
       <RbButton
-        className="btn-modal"
+        type="button"
         theme={theme}
         size={size}
         block={block}

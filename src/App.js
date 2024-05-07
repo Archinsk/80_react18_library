@@ -17,6 +17,7 @@ import NavRoute from "./routes/NavRoute";
 import OffcanvasButtonRoute from "./routes/OffcanvasButtonRoute";
 import OffcanvasRoute from "./routes/OffcanvasRoute";
 import HeaderRoute from "./routes/HeaderRoute";
+import ModalRoute from "./routes/ModalRoute";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
         | <Link to="/nav">Nav</Link> |{" "}
         <Link to="/offcanvasbutton">OffcanvasButton</Link> |{" "}
         <Link to="/offcanvas">Offcanvas</Link> |{" "}
-        <Link to="/header">Header</Link>
+        <Link to="/header">Header</Link> | <Link to="/modal">Modal</Link> |{" "}
       </nav>
       <Routes>
         <Route path="/" element={<HomeRoute />} />
@@ -57,6 +58,7 @@ function App() {
         <Route path="/offcanvasbutton" element={<OffcanvasButtonRoute />} />
         <Route path="/offcanvas" element={<OffcanvasRoute />} />
         <Route path="/header" element={<HeaderRoute />} />
+        <Route path="/modal" element={<ModalRoute />} />
       </Routes>
     </div>
   );
