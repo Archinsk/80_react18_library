@@ -57,7 +57,7 @@ function RbNavLink({
         <span>{children}</span>
       </a>
     );
-  } else if ((type = "modal-link")) {
+  } else if (type === "modal-link") {
     return (
       <RbModalButton
         targetId={href}

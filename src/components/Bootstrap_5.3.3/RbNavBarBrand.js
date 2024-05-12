@@ -33,8 +33,7 @@ function RbNavBarBrand({
         {name ? <div>{name}</div> : null}
       </Link>
     );
-  }
-  if (type === "action-link") {
+  } else if (type === "action-link") {
     return (
       <a href="#" class="navbar-brand">
         {imageSrc ? (
@@ -46,6 +45,19 @@ function RbNavBarBrand({
         ) : null}
         {name ? <div>{name}</div> : null}
       </a>
+    );
+  } else {
+    return (
+      <div class="navbar-brand">
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            className={navbarBrandImageClass}
+            alt="brand-logo"
+          />
+        ) : null}
+        {name ? <div>{name}</div> : null}
+      </div>
     );
   }
   return null;

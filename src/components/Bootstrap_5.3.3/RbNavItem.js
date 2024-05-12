@@ -52,13 +52,12 @@ function RbNavItem({
   );*/
 
   if (!dropdown) {
-    if (type === "modal-link" && linkIsSquareButton) {
+    if (type === "modal-link") {
       return (
         <li className={navItemClass}>
           <RbModalButton
             icon={icon}
             badge={badge}
-            additionalClasses={additionalClasses.navlink}
             square
             dataBsTarget={"#" + href}
             className="mx-2"

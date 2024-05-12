@@ -4,7 +4,6 @@ import RbNavItem from "./RbNavItem";
 import RbNavLink from "./RbNavLink";
 
 function RbNav({
-  children,
   tag,
   type,
   position,
@@ -14,8 +13,12 @@ function RbNav({
   scroll,
   itemsList,
   windowData,
+  className
 }) {
   let navClass = "nav";
+  if (className) {
+    navClass += ` ${className}`;
+  }
   if (type === "tabs") {
     navClass += " nav-tabs";
   } else if (type === "pills") {
@@ -39,45 +42,63 @@ function RbNav({
     navClass += " navbar-nav-scroll flex-nowrap";
   }
 
+  console.log("itemsList in nav");
+  console.log(tag);
+  console.log(itemsList);
+
+  let navItems = null;
+  if (itemsList) {
+    navItems = itemsList.map((navItem) => {
+      if (tag === "ul") {
+        return (
+          <RbNavItem
+            key={navItem.id}
+            id={navItem.id}
+            type={navItem.type}
+            href={navItem.href}
+            active={navItem.active}
+            disabled={navItem.disabled}
+            dropdown={navItem.dropdown}
+            dropdownItemsList={navItem.dropdownItemsList}
+            icon={navItem.icon}
+            badge={navItem.badge}
+            additionalClasses={navItem.additionalClasses}
+            windowData={windowData}
+            name={navItem.name}
+          >
+            {navItem.name}
+          </RbNavItem>
+        )
+      } else {
+        return (
+          <RbNavLink
+            key={navItem.id}
+            type={navItem.type}
+            href={navItem.href}
+            active={navItem.active}
+            disabled={navItem.disabled}
+            icon={navItem.icon}
+            badge={navItem.badge}
+            additionalClasses={navItem.additionalClasses}
+            windowData={windowData}
+          >
+            {navItem.name}
+          </RbNavLink>
+        )
+      }
+    })
+  }
+
   if (tag === "ul") {
     return (
       <ul className={navClass}>
-        <RbNavItem
-          key={navItem.id}
-          id={navItem.id}
-          type={navItem.type}
-          href={navItem.href}
-          active={navItem.active}
-          disabled={navItem.disabled}
-          dropdown={navItem.dropdown}
-          dropdownItemsList={navItem.dropdownItemsList}
-          icon={navItem.icon}
-          badge={navItem.badge}
-          additionalClasses={navItem.additionalClasses}
-          windowData={windowData}
-          name={navItem.name}
-        >
-          {navItem.name}
-        </RbNavItem>
+        {navItems}
       </ul>
     );
   } else {
     return (
       <nav className={navClass}>
-        <RbNavLink
-          key={navLink.id}
-          type={navLink.type}
-          href={navLink.href}
-          active={navLink.active}
-          disabled={navLink.disabled}
-          icon={navLink.icon}
-          badge={navLink.badge}
-          additionalClasses={navLink.additionalClasses}
-          windowData={windowData}
-        >
-          {navLink.name}
-        </RbNavLink>
-        {children}
+       {navItems}
       </nav>
     );
   }
