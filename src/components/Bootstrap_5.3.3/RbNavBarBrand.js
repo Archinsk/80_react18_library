@@ -1,3 +1,5 @@
+// Версия 1.01 от 13.05.2024
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "./RbNavBarBrand.scss";
@@ -26,7 +28,7 @@ function RbNavBarBrand({
         {imageSrc ? (
           <img
             src={imageSrc}
-            className={navbarBrandImageClass}
+            className={navbarBrandImageClass || null}
             alt="brand-logo"
           />
         ) : null}
@@ -35,11 +37,18 @@ function RbNavBarBrand({
     );
   } else if (type === "action-link") {
     return (
-      <a href="#" class="navbar-brand">
+      <a
+        href="#"
+        className="navbar-brand"
+        onClick={(e) => {
+          e.preventDefault();
+          action();
+        }}
+      >
         {imageSrc ? (
           <img
             src={imageSrc}
-            className={navbarBrandImageClass}
+            className={navbarBrandImageClass || null}
             alt="brand-logo"
           />
         ) : null}
@@ -48,11 +57,11 @@ function RbNavBarBrand({
     );
   } else {
     return (
-      <div class="navbar-brand">
+      <div className="navbar-brand">
         {imageSrc ? (
           <img
             src={imageSrc}
-            className={navbarBrandImageClass}
+            className={navbarBrandImageClass || null}
             alt="brand-logo"
           />
         ) : null}
@@ -60,7 +69,6 @@ function RbNavBarBrand({
       </div>
     );
   }
-  return null;
 }
 
 export default RbNavBarBrand;
