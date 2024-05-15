@@ -17,6 +17,8 @@ function RbNavLink({
   badge,
   additionalClasses,
   withoutNavLinkClass,
+  className,
+  dataBsToggle,
 }) {
   let navLinkClass = "";
   if (!withoutNavLinkClass) {
@@ -26,6 +28,9 @@ function RbNavLink({
     navLinkClass += " disabled";
   } else if (active) {
     navLinkClass += " active";
+  }
+  if (className) {
+    navLinkClass += " " + className;
   }
 
   let iconComponent;
@@ -54,7 +59,11 @@ function RbNavLink({
 
   if (type === "a") {
     return (
-      <a href={href} className={navLinkClass}>
+      <a
+        href={href}
+        className={navLinkClass}
+        data-bs-toggle={dataBsToggle || null}
+      >
         {icon ? iconComponent : null}
         <span>{children}</span>
       </a>

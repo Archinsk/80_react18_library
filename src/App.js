@@ -776,6 +776,7 @@ function App() {
           href: "/navitem",
           active: false,
           disabled: false,
+          icon: "done",
         },
         {
           id: "dropdown-link-nav-link",
@@ -791,6 +792,7 @@ function App() {
           name: "DropdownItem",
           type: "router-link",
           href: "/dropdownitem",
+          icon: "done",
 
           active: false,
           disabled: false,

@@ -1,9 +1,12 @@
+// Версия 1.01 от 13.05.2024
+
 import React from "react";
 import "./RbNav.scss";
 import RbNavItem from "./RbNavItem";
 import RbNavLink from "./RbNavLink";
 
 function RbNav({
+  children,
   tag,
   type,
   position,
@@ -13,7 +16,7 @@ function RbNav({
   scroll,
   itemsList,
   windowData,
-  className
+  className,
 }) {
   let navClass = "nav";
   if (className) {
@@ -68,7 +71,7 @@ function RbNav({
           >
             {navItem.name}
           </RbNavItem>
-        )
+        );
       } else {
         return (
           <RbNavLink
@@ -84,23 +87,15 @@ function RbNav({
           >
             {navItem.name}
           </RbNavLink>
-        )
+        );
       }
-    })
+    });
   }
 
   if (tag === "ul") {
-    return (
-      <ul className={navClass}>
-        {navItems}
-      </ul>
-    );
+    return <ul className={navClass}>{navItems || children}</ul>;
   } else {
-    return (
-      <nav className={navClass}>
-       {navItems}
-      </nav>
-    );
+    return <nav className={navClass}>{navItems || children}</nav>;
   }
 }
 

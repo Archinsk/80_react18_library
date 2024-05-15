@@ -1,3 +1,5 @@
+// Версия 1.01 от 15.05.2024
+
 import React from "react";
 import "./RbNavItem.scss";
 import RbModalButton from "./RbModalButton";
@@ -33,31 +35,79 @@ function RbNavItem({
     dropdownLinkClass += " dropdown-item";
   }
 
-  /*let additionalClassesArray;
-  if (this.additionalClasses && this.additionalClasses.navLink) {
-    additionalClassesArray = this.additionalClasses.navLink.split(" ");
+  let additionalClassesArray;
+  if (additionalClasses && additionalClasses.navLink) {
+    additionalClassesArray = additionalClasses.navLink.split(" ");
   } else {
-    return false;
+    additionalClassesArray = [];
   }
-  return (
+
+  const linkIsSquareButton = !!(
     additionalClassesArray.includes("btn-square") ||
     (additionalClassesArray.includes("btn-square-sm") &&
-      this.windowData.width >= 576) ||
+      windowData &&
+      windowData.width >= 576) ||
     (additionalClassesArray.includes("btn-square-md") &&
-      this.windowData.width >= 768) ||
+      windowData &&
+      windowData.width >= 768) ||
     (additionalClassesArray.includes("btn-square-lg") &&
-      this.windowData.width >= 992) ||
+      windowData &&
+      windowData.width >= 992) ||
     (additionalClassesArray.includes("btn-square-xl") &&
-      this.windowData.width >= 1200)
-  );*/
+      windowData &&
+      windowData.width >= 1200)
+  );
+
+  let dropdownItems;
+  if (dropdown) {
+    dropdownItems = dropdownItemsList.map((dropdownItem) => {
+      if (dropdownItem.dropdown) {
+        return (
+          <RbDropdownItem
+            key={dropdownItem.id}
+            type={dropdownItem.type}
+            href={dropdownItem.href}
+            active={dropdownItem.active}
+            disabled={dropdownItem.disabled}
+            icon={dropdownItem.icon}
+          >
+            {dropdownItem.name}
+          </RbDropdownItem>
+        );
+      } else {
+        return (
+          <RbNavItem
+            key={dropdownItem.id}
+            id={dropdownItem.id}
+            type={dropdownItem.type}
+            href={dropdownItem.href}
+            active={dropdownItem.active}
+            disabled={dropdownItem.disabled}
+            dropdown={dropdownItem.dropdown}
+            icon={dropdownItem.icon}
+            badge={dropdownItem.badge}
+            additionalClasses={dropdownItem.additionalClasses}
+            windowData={windowData}
+            dropdownItemsList={dropdownItem.dropdownItemsList}
+            isNestedDropdown
+          >
+            {dropdownItem.name}
+          </RbNavItem>
+        );
+      }
+    });
+  }
 
   if (!dropdown) {
-    if (type === "modal-link") {
+    if (type === "modal-link" && linkIsSquareButton) {
       return (
         <li className={navItemClass}>
           <RbModalButton
             icon={icon}
             badge={badge}
+            additionalclasses={
+              additionalClasses ? additionalClasses.navLink : ""
+            }
             square
             dataBsTarget={"#" + href}
             className="mx-2"
@@ -86,7 +136,7 @@ function RbNavItem({
         <RbNavLink
           id={id}
           type={type}
-          href={href}
+          href="#"
           active={active}
           disabled={disabled}
           icon={icon}
@@ -94,14 +144,12 @@ function RbNavItem({
           className={dropdownLinkClass}
           withoutNavLinkClass={isNestedDropdown}
           role="button"
-          dataToggle="dropdown"
+          dataBsToggle="dropdown"
           ariaExpanded="false"
         >
           {children}
         </RbNavLink>
-        <div className="dropdown-menu">
-          <RbDropdownItem></RbDropdownItem>
-        </div>
+        <div className="dropdown-menu">{dropdownItems}</div>
       </li>
     );
   }
