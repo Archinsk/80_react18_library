@@ -6,6 +6,7 @@ import RbButton from "./RbButton";
 
 function RbModalButton({
   children,
+  className,
   targetId,
   tag,
   theme,
@@ -17,12 +18,17 @@ function RbModalButton({
   additionalClasses,
   withoutBtnClass,
 }) {
+  let modalButtonClass = "btn-modal";
+  if (className) {
+    modalButtonClass += ` ${className}`;
+  }
+
   if (tag === "a") {
     return (
       <RbButtonLink
         href="#"
         role="button"
-        className="btn-modal"
+        className={modalButtonClass}
         theme={theme}
         size={size}
         block={block}
@@ -39,6 +45,7 @@ function RbModalButton({
   } else {
     return (
       <RbButton
+        className={modalButtonClass}
         type="button"
         theme={theme}
         size={size}

@@ -105,6 +105,8 @@ function NavRoute() {
         href={navItem.href}
         active={navItem.active}
         disabled={navItem.disabled}
+        dropdown={navItem.dropdown}
+        dropdownItemsList={navItem.dropdownItemsList}
       >
         {navItem.name}
       </RbNavItem>

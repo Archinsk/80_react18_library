@@ -3,10 +3,14 @@
 import React from "react";
 import "./RbCollapse.scss";
 
-function RbCollapse({ children, id, parentId }) {
+function RbCollapse({ children, id, parentId, className }) {
+  let collapseClass = "collapse";
+  if (className) {
+    collapseClass += ` ${className}`;
+  }
   return (
     <div
-      className="collapse"
+      className={collapseClass}
       id={id}
       dataParent={parentId ? "#" + parentId : null}
     >

@@ -61,7 +61,7 @@ function RbNavItem({
   let dropdownItems;
   if (dropdown) {
     dropdownItems = dropdownItemsList.map((dropdownItem) => {
-      if (dropdownItem.dropdown) {
+      if (!dropdownItem.dropdown) {
         return (
           <RbDropdownItem
             key={dropdownItem.id}
@@ -135,7 +135,7 @@ function RbNavItem({
       <li className={navItemClass}>
         <RbNavLink
           id={id}
-          type={type}
+          type="a"
           href="#"
           active={active}
           disabled={disabled}

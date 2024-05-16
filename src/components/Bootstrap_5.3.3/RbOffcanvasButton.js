@@ -14,6 +14,7 @@ function RbOffcanvasButton({
 }) {
   return (
     <RbButton
+      className="btn-offcanvas"
       type="button"
       theme={theme}
       size={size}

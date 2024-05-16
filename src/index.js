@@ -6,6 +6,7 @@ import "./bootstrap-5.3.3-default.scss";
 import "bootstrap";
 
 import "./index.css";
+// App должен импортироваться позднее bootstrap.css, чтобы стили компонентов перекрывали стили Bootstrap
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

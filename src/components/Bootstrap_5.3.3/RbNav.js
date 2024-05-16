@@ -1,4 +1,4 @@
-// Версия 1.01 от 13.05.2024
+// Версия 1.01 от 16.05.2024
 
 import React from "react";
 import "./RbNav.scss";
@@ -93,7 +93,11 @@ function RbNav({
   }
 
   if (tag === "ul") {
-    return <ul className={navClass}>{navItems || children}</ul>;
+    return (
+      <ul className={navClass} style={scroll ? { maxHeight: "7.5rem" } : null}>
+        {navItems || children}
+      </ul>
+    );
   } else {
     return <nav className={navClass}>{navItems || children}</nav>;
   }

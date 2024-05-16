@@ -4,7 +4,7 @@ import RbCollapseButton from "../components/Bootstrap_5.3.3/RbCollapseButton";
 function CollapseRoute() {
   return (
     <>
-      Collapse Route
+      <h2>Collapse</h2>
       <h3>Варианты использования</h3>
       <RbCollapseButton targetId="notificationCollapse" theme="primary">
         Детали

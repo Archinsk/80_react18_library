@@ -18,6 +18,9 @@ import OffcanvasButtonRoute from "./routes/OffcanvasButtonRoute";
 import OffcanvasRoute from "./routes/OffcanvasRoute";
 import HeaderRoute from "./routes/HeaderRoute";
 import ModalRoute from "./routes/ModalRoute";
+import ModalHeaderRoute from "./routes/ModalHeaderRoute";
+import ModalBodyRoute from "./routes/ModalBodyRoute";
+import ModalFooterRoute from "./routes/ModalFooterRoute";
 import RbHeader from "./components/Bootstrap_5.3.3/RbHeader";
 
 function App() {
@@ -28,7 +31,7 @@ function App() {
       name: "Viewer Studio",
       imageSrc: "images/viewer-logo.svg",
     },
-    /*nav: {
+    nav: {
       itemsList: [
         {
           id: "nav-link-home",
@@ -52,7 +55,7 @@ function App() {
           type: "router-link",
           href: "/alert",
           active: false,
-          disabled: false,
+          disabled: true,
         },
         {
           id: "nav-link-card",
@@ -60,7 +63,7 @@ function App() {
           type: "router-link",
           href: "/card",
           active: false,
-          disabled: false,
+          disabled: true,
         },
         {
           id: "nav-link-collapse",
@@ -84,18 +87,18 @@ function App() {
               name: "Collapse",
               type: "router-link",
               href: "/collapse",
-              
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-collapse-button",
               name: "CollapseButton",
               type: "router-link",
               href: "/collapsebutton",
-              
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-accordion",
@@ -103,7 +106,7 @@ function App() {
               type: "router-link",
               href: "/accordion",
               active: false,
-              disabled: false,
+              disabled: true,
               icon: "",
               badge: {
                 theme: "danger",
@@ -121,7 +124,7 @@ function App() {
           type: "router-link",
           href: "/filter",
           active: false,
-          disabled: false,
+          disabled: true,
         },
         {
           id: "nav-link-form",
@@ -129,7 +132,7 @@ function App() {
           type: "router-link",
           href: "/form",
           active: false,
-          disabled: false,
+          disabled: true,
         },
         {
           id: "nav-link-form-components",
@@ -137,7 +140,7 @@ function App() {
           type: "router-link",
           href: "#",
           active: false,
-          disabled: false,
+          disabled: true,
           dropdown: true,
           dropdownItemsList: [
             {
@@ -223,7 +226,7 @@ function App() {
           type: "router-link",
           href: "/itemslist",
           active: false,
-          disabled: false,
+          disabled: true,
         },
         {
           id: "nav-link-modal",
@@ -243,13 +246,38 @@ function App() {
               disabled: false,
             },
             {
+              id: "dropdown-link-modal-header",
+              name: "ModalHeader",
+              type: "router-link",
+              href: "/modalheader",
+              active: false,
+              disabled: false,
+              icon: "done",
+            },
+            {
+              id: "dropdown-link-modal-body",
+              name: "ModalBody",
+              type: "router-link",
+              href: "/modalbody",
+              active: false,
+              disabled: false,
+            },
+            {
+              id: "dropdown-link-modal-footer",
+              name: "ModalFooter",
+              type: "router-link",
+              href: "/modalfooter",
+              active: false,
+              disabled: false,
+            },
+            {
               id: "dropdown-link-modal-button",
               name: "ModalButton",
               type: "router-link",
               href: "/modalbutton",
               active: false,
               disabled: false,
-              
+              icon: "done",
             },
           ],
         },
@@ -260,7 +288,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
-          
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -270,7 +298,7 @@ function App() {
               href: "/nav",
               active: false,
               disabled: false,
-              
+              icon: "done",
             },
             {
               id: "dropdown-link-nav-item",
@@ -279,7 +307,7 @@ function App() {
               href: "/navitem",
               active: false,
               disabled: false,
-              
+              icon: "done",
             },
             {
               id: "dropdown-link-nav-link",
@@ -288,16 +316,16 @@ function App() {
               href: "/navlink",
               active: false,
               disabled: false,
-              
+              icon: "done",
             },
             {
               id: "dropdown-link-nav-dropdown-item",
               name: "DropdownItem",
               type: "router-link",
               href: "/dropdownitem",
-              
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },
@@ -307,7 +335,7 @@ function App() {
           type: "router-link",
           href: "#",
           active: false,
-          disabled: false,
+          disabled: true,
           dropdown: true,
           dropdownItemsList: [
             {
@@ -350,7 +378,7 @@ function App() {
           type: "router-link",
           href: "/preloader",
           active: false,
-          disabled: false,
+          disabled: true,
         },
         {
           id: "nav-link-tabs",
@@ -358,8 +386,7 @@ function App() {
           type: "router-link",
           href: "#",
           active: false,
-          disabled: false,
-          
+          disabled: true,
           dropdown: true,
           dropdownItemsList: [
             {
@@ -369,7 +396,6 @@ function App() {
               href: "/tabs",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-nav-tabs",
@@ -378,7 +404,6 @@ function App() {
               href: "/navtabs",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-nav-tab-link",
@@ -387,7 +412,6 @@ function App() {
               href: "/navtablink",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-tab-content",
@@ -396,7 +420,6 @@ function App() {
               href: "/tabcontent",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-tab-pane",
@@ -405,7 +428,6 @@ function App() {
               href: "/tabpane",
               active: false,
               disabled: false,
-              
             },
           ],
         },
@@ -415,7 +437,7 @@ function App() {
           type: "router-link",
           href: "#",
           active: false,
-          disabled: false,
+          disabled: true,
           dropdown: true,
           dropdownItemsList: [
             {
@@ -443,7 +465,6 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
-          
           dropdown: true,
           dropdownItemsList: [
             {
@@ -453,7 +474,6 @@ function App() {
               href: "/navbar",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-nav-bar-brand",
@@ -462,7 +482,7 @@ function App() {
               href: "/navbarbrand",
               active: false,
               disabled: false,
-              
+              icon: "done",
             },
           ],
         },
@@ -473,7 +493,6 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
-          
           dropdown: true,
           dropdownItemsList: [
             {
@@ -483,14 +502,12 @@ function App() {
               href: "/offcanvas",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-offcanvas-button",
               name: "OffcanvasButton",
               type: "router-link",
               href: "/offcanvasbutton",
-              
               active: false,
               disabled: false,
             },
@@ -509,7 +526,6 @@ function App() {
           name: "Icon",
           type: "router-link",
           href: "/icon",
-          
           active: false,
           disabled: false,
         },
@@ -520,7 +536,6 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
-          
           dropdown: true,
           dropdownItemsList: [
             {
@@ -530,7 +545,6 @@ function App() {
               href: "/button",
               active: false,
               disabled: false,
-              
             },
             {
               id: "dropdown-link-button-link",
@@ -539,7 +553,6 @@ function App() {
               href: "/buttonlink",
               active: false,
               disabled: false,
-              
             },
           ],
         },
@@ -548,7 +561,6 @@ function App() {
           name: "Badge",
           type: "router-link",
           href: "/badge",
-          
           active: false,
           disabled: false,
         },
@@ -595,8 +607,8 @@ function App() {
           },
         },
       ],
-    },*/
-    nav: {
+    },
+    /*nav: {
       itemsList: [
         {
           id: "nav-link-home",
@@ -1012,7 +1024,7 @@ function App() {
           },
         },
       ],
-    },
+    },*/
   };
 
   return (
@@ -1021,7 +1033,7 @@ function App() {
         id="header"
         expand
         expandSize="xl"
-        theme="info"
+        theme="secondary"
         dark
         monochrome
         brand={headerData.brand}
@@ -1048,6 +1060,9 @@ function App() {
           <Route path="/offcanvas" element={<OffcanvasRoute />} />
           <Route path="/header" element={<HeaderRoute />} />
           <Route path="/modal" element={<ModalRoute />} />
+          <Route path="/modalheader" element={<ModalHeaderRoute />} />
+          <Route path="/modalbody" element={<ModalBodyRoute />} />
+          <Route path="/modalfooter" element={<ModalFooterRoute />} />
         </Routes>
       </div>
     </div>

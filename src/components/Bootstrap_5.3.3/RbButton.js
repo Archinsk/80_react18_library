@@ -7,6 +7,7 @@ import RbBadge from "./RbBadge";
 
 function RbButton({
   children,
+  className,
   type = "button",
   theme,
   size,
@@ -17,8 +18,10 @@ function RbButton({
   additionalClasses,
   dataBsToggle,
   dataBsTarget,
+  dataBsDismiss,
   ariaExpanded,
   ariaControls,
+  ariaLabel,
 }) {
   let btnClass = "btn";
   if (theme) {
@@ -42,6 +45,9 @@ function RbButton({
   if (additionalClasses) {
     btnClass += ` ${additionalClasses}`;
   }
+  if (className) {
+    btnClass += ` ${className}`;
+  }
 
   return (
     <button
@@ -49,8 +55,10 @@ function RbButton({
       className={btnClass}
       data-bs-toggle={dataBsToggle ? dataBsToggle : null}
       data-bs-target={dataBsTarget ? dataBsTarget : null}
+      data-bs-dismiss={dataBsDismiss ? dataBsDismiss : null}
       aria-expanded={ariaExpanded ? ariaExpanded : null}
       aria-controls={ariaControls ? ariaControls : null}
+      aria-label={ariaLabel ? ariaLabel : null}
     >
       {icon ? (
         <RbIcon

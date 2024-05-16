@@ -11,10 +11,16 @@ function RbCollapseButton({
   block,
   square,
   icon,
+  className,
 }) {
+  let collapseButtonClass = "btn-collapse";
+  if (className) {
+    collapseButtonClass += ` ${className}`;
+  }
+
   return (
     <RbButton
-      className="btn-collapse"
+      className={collapseButtonClass}
       type="button"
       theme={theme}
       size={size}
