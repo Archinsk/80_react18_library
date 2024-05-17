@@ -1,8 +1,9 @@
-import React from "react";
-//import "./RbModalFooter.scss";
+// Версия 1.01 от 17.05.2024
 
-function RbModalFooter() {
-  return <div className="modal-footer">Modal Footer</div>;
+import React from "react";
+
+function RbModalFooter({ children }) {
+  return <div className="modal-footer">{children}</div>;
 }
 
 export default RbModalFooter;

@@ -261,6 +261,7 @@ function App() {
               href: "/modalbody",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-modal-footer",
@@ -269,6 +270,7 @@ function App() {
               href: "/modalfooter",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-modal-button",

@@ -13,12 +13,11 @@ function RbModal({
   verticalCenter,
   scrollable,
   title,
-  noTitle,
   noCloseButton,
   noBackdrop,
   noKeyboard,
   staticBackdrop,
-  customModal,
+  custom,
 }) {
   let modalDialogClass = "modal-dialog";
   if (scrollable) {
@@ -32,12 +31,12 @@ function RbModal({
   }
 
   let modalContent;
-  if (customModal) {
+  if (custom) {
     modalContent = children;
   } else {
     modalContent = (
       <>
-        {header ? (
+        {title || !noCloseButton ? (
           <RbModalHeader id={id} noCloseButton={noCloseButton}>
             {title}
           </RbModalHeader>
@@ -48,7 +47,13 @@ function RbModal({
     );
   }
   return (
-    <div className="modal fade" id={id} tabIndex="-1">
+    <div
+      className="modal fade"
+      id={id}
+      tabIndex="-1"
+      dataBsBackdrop="static"
+      dataBsKeyboard="false"
+    >
       <div className={modalDialogClass}>
         <div className="modal-content">{modalContent}</div>
       </div>
