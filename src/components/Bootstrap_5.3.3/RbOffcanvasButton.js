@@ -5,6 +5,7 @@ import RbButton from "./RbButton";
 
 function RbOffcanvasButton({
   children,
+  className,
   targetId,
   theme,
   size,
@@ -12,17 +13,22 @@ function RbOffcanvasButton({
   square,
   icon,
 }) {
+  let offcanvasButtonClass = "btn-offcanvas";
+  if (className) {
+    offcanvasButtonClass += ` ${className}`;
+  }
+
   return (
     <RbButton
-      className="btn-offcanvas"
-      type="button"
+      className={offcanvasButtonClass}
       theme={theme}
       size={size}
       block={block}
       square={square}
       icon={icon}
       dataBsToggle="offcanvas"
-      dataBsTarget={targetId}
+      dataBsTarget={"#" + targetId}
+      ariaControls={targetId}
     >
       {children}
     </RbButton>

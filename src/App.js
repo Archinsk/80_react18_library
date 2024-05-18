@@ -16,6 +16,8 @@ import NavItemRoute from "./routes/NavItemRoute";
 import NavRoute from "./routes/NavRoute";
 import OffcanvasButtonRoute from "./routes/OffcanvasButtonRoute";
 import OffcanvasRoute from "./routes/OffcanvasRoute";
+import OffcanvasHeaderRoute from "./routes/OffcanvasHeaderRoute";
+import OffcanvasBodyRoute from "./routes/OffcanvasBodyRoute";
 import HeaderRoute from "./routes/HeaderRoute";
 import ModalRoute from "./routes/ModalRoute";
 import ModalHeaderRoute from "./routes/ModalHeaderRoute";
@@ -235,6 +237,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -244,6 +247,7 @@ function App() {
               href: "/modal",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-modal-header",
@@ -495,6 +499,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -504,6 +509,25 @@ function App() {
               href: "/offcanvas",
               active: false,
               disabled: false,
+              icon: "done",
+            },
+            {
+              id: "dropdown-link-offcanvas-header",
+              name: "OffcanvasHeader",
+              type: "router-link",
+              href: "/offcanvasheader",
+              active: false,
+              disabled: false,
+              icon: "done",
+            },
+            {
+              id: "dropdown-link-offcanvas-body",
+              name: "OffcanvasBody",
+              type: "router-link",
+              href: "/offcanvasbody",
+              active: false,
+              disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-offcanvas-button",
@@ -512,6 +536,7 @@ function App() {
               href: "/offcanvasbutton",
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },
@@ -1060,6 +1085,8 @@ function App() {
           <Route path="/nav" element={<NavRoute />} />
           <Route path="/offcanvasbutton" element={<OffcanvasButtonRoute />} />
           <Route path="/offcanvas" element={<OffcanvasRoute />} />
+          <Route path="/offcanvasheader" element={<OffcanvasHeaderRoute />} />
+          <Route path="/offcanvasbody" element={<OffcanvasBodyRoute />} />
           <Route path="/header" element={<HeaderRoute />} />
           <Route path="/modal" element={<ModalRoute />} />
           <Route path="/modalheader" element={<ModalHeaderRoute />} />

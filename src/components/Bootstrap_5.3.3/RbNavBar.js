@@ -44,6 +44,20 @@ function RbNavBar({
     containerClass += ` justify-content-${justifyContent}`;
   }
 
+  /*let navbarNavWithToggleButton;
+  if (offcanvas) {
+    if (!withoutToggler) {
+
+    }
+    navbarNavWithToggleButton = (
+      
+    )
+  } else {
+    if (!withoutToggler) {
+
+    }
+  }*/
+
   return (
     <nav id={id} className={navbarClass} data-bs-theme={dark ? "dark" : ""}>
       <div className={containerClass}>

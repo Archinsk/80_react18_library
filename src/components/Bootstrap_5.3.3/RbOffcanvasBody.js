@@ -1,13 +1,9 @@
-import React from "react";
-//import "./RbOffcanvas.scss";
+// Версия 1.01 от 18.05.2024
 
-function RbOffcanvasBody() {
-  return (
-    <div class="offcanvas-body">
-      Content for the offcanvas goes here. You can place just about any
-      Bootstrap component or custom elements here.
-    </div>
-  );
+import React from "react";
+
+function RbOffcanvasBody({ children }) {
+  return <div className="offcanvas-body">{children}</div>;
 }
 
 export default RbOffcanvasBody;

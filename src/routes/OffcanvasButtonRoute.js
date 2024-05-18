@@ -6,10 +6,10 @@ function OffcanvasButtonRoute() {
     <>
       <h2>OffcanvasButton</h2>
       <h3>Варианты использования</h3>
-      <RbOffcanvasButton targetId="offcanvas-01" class="btn-primary">
+      <RbOffcanvasButton targetId="offcanvas01" theme="primary">
         OffcanvasButton
       </RbOffcanvasButton>
-      <RbOffcanvas id="offcanvas-01" theme="warning" header footer>
+      <RbOffcanvas id="offcanvas01" theme="warning" title="Заголовок">
         Содержимое Offcanvas
       </RbOffcanvas>
     </>

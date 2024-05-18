@@ -1,14 +1,12 @@
+// Версия 1.01 от 18.05.2024
+
 import React from "react";
 import RbModalHeader from "./RbModalHeader";
 import RbModalBody from "./RbModalBody";
-import RbModalFooter from "./RbModalFooter";
-//import "./RbOffcanvas.scss";
 
 function RbModal({
   children,
   id,
-  header,
-  footer,
   size,
   verticalCenter,
   scrollable,
@@ -42,17 +40,22 @@ function RbModal({
           </RbModalHeader>
         ) : null}
         <RbModalBody>{children}</RbModalBody>
-        {footer ? <RbModalFooter /> : null}
       </>
     );
+  }
+  let backdrop;
+  if (noBackdrop) {
+    backdrop = "false";
+  } else if (staticBackdrop) {
+    backdrop = "static";
   }
   return (
     <div
       className="modal fade"
       id={id}
       tabIndex="-1"
-      dataBsBackdrop="static"
-      dataBsKeyboard="false"
+      data-bs-backdrop={backdrop}
+      data-bs-keyboard={noKeyboard ? "false" : null}
     >
       <div className={modalDialogClass}>
         <div className="modal-content">{modalContent}</div>

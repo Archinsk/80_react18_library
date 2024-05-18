@@ -1,18 +1,26 @@
-import React from "react";
-//import "./RbOffcanvas.scss";
+// Версия 1.01 от 18.05.2024
 
-function RbOffcanvasHeader() {
+import React from "react";
+import RbButton from "./RbButton";
+
+function RbOffcanvasHeader({ children, id, noTitle, noCloseButton }) {
   return (
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasLabel">
-        Offcanvas
-      </h5>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="offcanvas"
-        aria-label="Close"
-      ></button>
+    <div className="offcanvas-header">
+      {noTitle ? (
+        children
+      ) : (
+        <h5 className="offcanvas-title" id={id + "Label"}>
+          {children}
+        </h5>
+      )}
+      {noCloseButton ? null : (
+        <RbButton
+          type="button"
+          className="btn-close"
+          dataBsDismiss="offcanvas"
+          ariaLabel="Close"
+        ></RbButton>
+      )}
     </div>
   );
 }
