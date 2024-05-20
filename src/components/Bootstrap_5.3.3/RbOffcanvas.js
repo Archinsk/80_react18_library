@@ -3,6 +3,7 @@
 import React from "react";
 import RbOffcanvasHeader from "./RbOffcanvasHeader";
 import RbOffcanvasBody from "./RbOffcanvasBody";
+import "./RbOffcanvas.scss";
 
 function RbOffcanvas({
   children,

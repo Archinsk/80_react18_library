@@ -2,6 +2,8 @@ import React from "react";
 import RbNavBarBrand from "./RbNavBarBrand";
 import RbCollapseButton from "./RbCollapseButton";
 import RbCollapse from "./RbCollapse";
+import RbOffcanvas from "./RbOffcanvas";
+import RbOffcanvasButton from "./RbOffcanvasButton";
 //import "./RbNavBar.scss";
 
 function RbNavBar({
@@ -16,6 +18,7 @@ function RbNavBar({
   brand,
   withoutToggler,
   justifyContent,
+  offcanvas,
 }) {
   let navbarClass = "navbar";
   if (dark) {
@@ -58,6 +61,49 @@ function RbNavBar({
     }
   }*/
 
+  let navBarNavToggler = null;
+  if (offcanvas) {
+    navBarNavToggler = (
+      <RbOffcanvasButton
+        ariaLabel="Toggle navigation"
+        targetId={id ? id + "-offcanvas" : "navbarOffcanvasContent"}
+        theme="outline-light"
+        square
+        icon="menu"
+        className={"d-" + expandSize + "-none"}
+      />
+    );
+  } else if (!withoutToggler) {
+    navBarNavToggler = (
+      <RbCollapseButton
+        ariaLabel="Toggle navigation"
+        targetId={id ? id + "-collapse" : "navbarCollapseContent"}
+        theme="outline-light"
+        square
+        icon="menu"
+        className={"d-" + expandSize + "-none"}
+      />
+    );
+  }
+
+  let navPanel = null;
+  if (offcanvas) {
+    navPanel = (
+      <RbOffcanvas id={id ? id + "-offcanvas" : "navbarOffcanvasContent"}>
+        {children}
+      </RbOffcanvas>
+    );
+  } else {
+    navPanel = (
+      <RbCollapse
+        className="navbar-collapse"
+        id={id ? id + "-collapse" : "navbarCollapseContent"}
+      >
+        {children}
+      </RbCollapse>
+    );
+  }
+
   return (
     <nav id={id} className={navbarClass} data-bs-theme={dark ? "dark" : ""}>
       <div className={containerClass}>
@@ -72,22 +118,8 @@ function RbNavBar({
             action={brand.action}
           />
         ) : null}
-        {!withoutToggler ? (
-          <RbCollapseButton
-            ariaLabel="Toggle navigation"
-            targetId={id ? id + "-collapse" : "navbarCollapseContent"}
-            theme="outline-light"
-            square
-            icon="menu"
-            className={"d-" + expandSize + "-none"}
-          />
-        ) : null}
-        <RbCollapse
-          className="navbar-collapse"
-          id={id ? id + "-collapse" : "navbarCollapseContent"}
-        >
-          {children}
-        </RbCollapse>
+        {navBarNavToggler}
+        {navPanel}
       </div>
     </nav>
   );

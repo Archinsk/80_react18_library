@@ -1,7 +1,6 @@
 // Версия 1.01 от 16.05.2024
 
 import React from "react";
-import "./RbNav.scss";
 import RbNavItem from "./RbNavItem";
 import RbNavLink from "./RbNavLink";
 

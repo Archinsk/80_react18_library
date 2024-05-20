@@ -1,5 +1,7 @@
 import RbNav from "../components/Bootstrap_5.3.3/RbNav";
 import RbNavBar from "../components/Bootstrap_5.3.3/RbNavBar";
+import RbOffcanvas from "../components/Bootstrap_5.3.3/RbOffcanvas";
+import RbOffcanvasButton from "../components/Bootstrap_5.3.3/RbOffcanvasButton";
 
 function NavBarRoute() {
   const defaultNavBar = {
@@ -188,26 +190,20 @@ function NavBarRoute() {
         />
       </RbNavBar>
       <div>Разворачивающаяся боковой панелью на малых экранах (доделать)</div>
-      <RbNavBar id="nav-bar-08" theme="warning" expand without-toggler>
-        <vb-offcanvas
-          id="offcanvas-01"
-          expandSize="sm"
-          theme="warning"
-          header
-          noEffectPoint="sm"
-        >
-          <RbNav
-            tag="ul"
-            className="navbar-nav"
-            itemsList={defaultNavBar.nav.itemsList}
-          />
-        </vb-offcanvas>
-        <vb-offcanvas-button
-          targetId="offcanvas-01"
-          className="btn-light d-sm-none"
-        >
-          Off
-        </vb-offcanvas-button>
+      <RbNavBar
+        id="nav-bar-08"
+        theme="warning"
+        brand={defaultNavBar.brand}
+        expand
+        expandSize={defaultNavBar.expandSize}
+        withoutToggler
+        offcanvas
+      >
+        <RbNav
+          tag="ul"
+          className="navbar-nav"
+          itemsList={defaultNavBar.nav.itemsList}
+        />
       </RbNavBar>
     </>
   );

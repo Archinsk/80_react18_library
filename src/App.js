@@ -471,6 +471,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -480,6 +481,7 @@ function App() {
               href: "/navbar",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-nav-bar-brand",
