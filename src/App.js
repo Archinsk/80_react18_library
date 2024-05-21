@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import HomeRoute from "./routes/HomeRoute";
+import AlertRoute from "./routes/AlertRoute";
 import IconRoute from "./routes/IconRoute";
 import BadgeRoute from "./routes/BadgeRoute";
 import DropdownItemRoute from "./routes/DropdownItemRoute";
@@ -57,7 +58,7 @@ function App() {
           type: "router-link",
           href: "/alert",
           active: false,
-          disabled: true,
+          disabled: false,
         },
         {
           id: "nav-link-card",
@@ -1072,6 +1073,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<HomeRoute />} />
+          <Route path="/alert" element={<AlertRoute />} />
           <Route path="/icon" element={<IconRoute />} />
           <Route path="/badge" element={<BadgeRoute />} />
           <Route path="/dropdownitem" element={<DropdownItemRoute />} />
