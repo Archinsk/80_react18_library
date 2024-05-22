@@ -12,6 +12,7 @@ function RbCollapseButton({
   square,
   icon,
   className,
+  withoutBtnClass,
 }) {
   let collapseButtonClass = "btn-collapse";
   if (className) {
@@ -27,6 +28,7 @@ function RbCollapseButton({
       block={block}
       square={square}
       icon={icon}
+      withoutBtnClass={withoutBtnClass}
       dataBsToggle="collapse"
       dataBsTarget={"#" + targetId}
       ariaExpanded="false"

@@ -3,7 +3,7 @@
 import React from "react";
 import "./RbCollapse.scss";
 
-function RbCollapse({ children, id, parentId, className }) {
+function RbCollapse({ children, id, accordionId, className }) {
   let collapseClass = "collapse";
   if (className) {
     collapseClass += ` ${className}`;
@@ -12,7 +12,7 @@ function RbCollapse({ children, id, parentId, className }) {
     <div
       className={collapseClass}
       id={id}
-      dataParent={parentId ? "#" + parentId : null}
+      data-bs-parent={accordionId ? "#" + accordionId : null}
     >
       {children}
     </div>

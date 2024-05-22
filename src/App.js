@@ -9,6 +9,10 @@ import ButtonLinkRoute from "./routes/ButtonLinkRoute";
 import ButtonRoute from "./routes/ButtonRoute";
 import CollapseRoute from "./routes/CollapseRoute";
 import CollapseButtonRoute from "./routes/CollapseButtonRoute";
+import AccordionRoute from "./routes/AccordionRoute";
+import AccordionItemRoute from "./routes/AccordionItemRoute";
+import AccordionItemHeaderRoute from "./routes/AccordionItemHeaderRoute";
+import AccordionItemBodyRoute from "./routes/AccordionItemBodyRoute";
 import NavBarBrandRoute from "./routes/NavBarBrandRoute";
 import NavBarRoute from "./routes/NavBarRoute";
 import ModalButtonRoute from "./routes/ModalButtonRoute";
@@ -59,6 +63,7 @@ function App() {
           href: "/alert",
           active: false,
           disabled: false,
+          icon: "done",
         },
         {
           id: "nav-link-card",
@@ -109,7 +114,7 @@ function App() {
               type: "router-link",
               href: "/accordion",
               active: false,
-              disabled: true,
+              disabled: false,
               icon: "",
               badge: {
                 theme: "danger",
@@ -118,6 +123,33 @@ function App() {
                 value: 25,
                 max: 99,
               },
+            },
+            {
+              id: "dropdown-link-accordion-item",
+              name: "AccordionItem",
+              type: "router-link",
+              href: "/accordionitem",
+              active: false,
+              disabled: false,
+              icon: "",
+            },
+            {
+              id: "dropdown-link-accordion-item-header",
+              name: "AccordionItemHeader",
+              type: "router-link",
+              href: "/accordionitemheader",
+              active: false,
+              disabled: false,
+              icon: "",
+            },
+            {
+              id: "dropdown-link-accordion-item-body",
+              name: "AccordionItemBody",
+              type: "router-link",
+              href: "/accordionitembody",
+              active: false,
+              disabled: false,
+              icon: "",
             },
           ],
         },
@@ -1081,6 +1113,16 @@ function App() {
           <Route path="/button" element={<ButtonRoute />} />
           <Route path="/collapse" element={<CollapseRoute />} />
           <Route path="/collapsebutton" element={<CollapseButtonRoute />} />
+          <Route path="/accordion" element={<AccordionRoute />} />
+          <Route path="/accordionitem" element={<AccordionItemRoute />} />
+          <Route
+            path="/accordionitemheader"
+            element={<AccordionItemHeaderRoute />}
+          />
+          <Route
+            path="/accordionitembody"
+            element={<AccordionItemBodyRoute />}
+          />
           <Route path="/navbarbrand" element={<NavBarBrandRoute />} />
           <Route path="/navbar" element={<NavBarRoute />} />
           <Route path="/modalbutton" element={<ModalButtonRoute />} />

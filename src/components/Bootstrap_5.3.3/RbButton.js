@@ -15,6 +15,7 @@ function RbButton({
   square,
   icon,
   badge,
+  withoutBtnClass,
   additionalClasses,
   dataBsToggle,
   dataBsTarget,
@@ -23,7 +24,10 @@ function RbButton({
   ariaControls,
   ariaLabel,
 }) {
-  let btnClass = "btn";
+  let btnClass = "";
+  if (!withoutBtnClass) {
+    btnClass = "btn";
+  }
   if (theme) {
     btnClass += ` btn-${theme}`;
   }
