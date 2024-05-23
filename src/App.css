@@ -6,3 +6,8 @@
   border: 3px grey solid;
   border-radius: 0.5rem;
 }
+
+.use-case-title {
+  color: grey;
+  margin-top: 1rem;
+}

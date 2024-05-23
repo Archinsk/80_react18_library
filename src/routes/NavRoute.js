@@ -117,23 +117,31 @@ function NavRoute() {
     <>
       <h2>Nav</h2>
       <h3>Варианты использования</h3>
-      <div>Без пропов, пункты проброшены в слот</div>
+      <div className="use-case-title">Без пропов, пункты проброшены в слот</div>
       <RbNav>{navLinks}</RbNav>
-      <div>Горизонтальное центрирование</div>
+      <div className="use-case-title">Горизонтальное центрирование</div>
       <RbNav position="center" itemsList={defaultNav.itemsList} />
-      <div>Вертикальное расположение</div>
+      <div className="use-case-title">Вертикальное расположение</div>
       <RbNav vertical itemsList={defaultNav.itemsList} />
-      <div>В виде табов</div>
+      <div className="use-case-title">В виде табов</div>
       <RbNav type="tabs" itemsList={defaultNav.itemsList} />
-      <div>В виде кнопок</div>
+      <div className="use-case-title">В виде кнопок</div>
       <RbNav type="pills" itemsList={defaultNav.itemsList} />
-      <div>В виде кнопок, занимающих все пространство</div>
+      <div className="use-case-title">
+        В виде кнопок, занимающих все пространство
+      </div>
       <RbNav type="pills" fill itemsList={defaultNav.itemsList} />
-      <div>В виде кнопок равной ширины, занимающих все пространство</div>
+      <div className="use-case-title">
+        В виде кнопок равной ширины, занимающих все пространство
+      </div>
       <RbNav type="pills" justified itemsList={defaultNav.itemsList} />
-      <div>Ненумерованный список с пробросом в слот</div>
+      <div className="use-case-title">
+        Ненумерованный список с пробросом в слот
+      </div>
       <RbNav tag="ul">{navItems}</RbNav>
-      <div>Ненумерованный список со списком переданным через проп</div>
+      <div className="use-case-title">
+        Ненумерованный список со списком переданным через проп
+      </div>
       <RbNav tag="ul" itemsList={defaultNav.itemsList} />
     </>
   );

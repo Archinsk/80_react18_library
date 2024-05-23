@@ -29,6 +29,7 @@ import ModalHeaderRoute from "./routes/ModalHeaderRoute";
 import ModalBodyRoute from "./routes/ModalBodyRoute";
 import ModalFooterRoute from "./routes/ModalFooterRoute";
 import RbHeader from "./components/Bootstrap_5.3.3/RbHeader";
+import RbModal from "./components/Bootstrap_5.3.3/RbModal";
 
 function App() {
   const headerData = {
@@ -590,6 +591,7 @@ function App() {
           href: "/icon",
           active: false,
           disabled: false,
+          icon: "done",
         },
         {
           id: "nav-link-button",
@@ -598,6 +600,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -607,6 +610,7 @@ function App() {
               href: "/button",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-button-link",
@@ -615,6 +619,7 @@ function App() {
               href: "/buttonlink",
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },
@@ -1102,6 +1107,7 @@ function App() {
         nav={headerData.nav}
         justifyContent="between"
       />
+      <RbModal id="modal-test">Тестовое модальное окно</RbModal>
       <div className="container">
         <Routes>
           <Route path="/" element={<HomeRoute />} />

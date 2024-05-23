@@ -11,6 +11,7 @@
   display: inline-block;
   white-space: nowrap;
   word-wrap: normal;
+  // Не верно, требуется уточнение
   vertical-align: calc(-0.125em + (1em - 1rem) / 20);
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;

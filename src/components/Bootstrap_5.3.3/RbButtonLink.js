@@ -6,6 +6,7 @@ import RbIcon from "./RbIcon";
 
 function RbButtonLink({
   children,
+  className,
   href,
   theme,
   size,
@@ -15,36 +16,39 @@ function RbButtonLink({
   additionalClasses,
   withoutBtnClass,
 }) {
-  let btnClass = "";
+  let buttonClass = "";
   if (!withoutBtnClass) {
-    btnClass += "btn";
+    buttonClass = "btn";
   }
   if (theme) {
-    btnClass += ` btn-${theme}`;
+    buttonClass += ` btn-${theme}`;
   }
   if (size && ["sm", "lg"].includes(size)) {
-    btnClass += ` btn-${size}`;
+    buttonClass += ` btn-${size}`;
   }
   if (block) {
-    btnClass += " btn-block";
+    buttonClass += " btn-block";
   }
   if (square) {
-    btnClass += " btn-square";
+    buttonClass += " btn-square";
   }
   if (icon) {
-    btnClass += " btn-icon";
+    buttonClass += " btn-icon";
   }
   if (additionalClasses) {
-    btnClass += ` ${additionalClasses}`;
+    buttonClass += ` ${additionalClasses}`;
+  }
+  if (className) {
+    buttonClass += ` ${className}`;
   }
 
   return (
-    <a href={href} className={btnClass}>
+    <a href={href} className={buttonClass}>
       {icon ? (
         <RbIcon
           name={typeof icon === "string" ? icon : icon.name}
           format={icon.format}
-          type={icon.typ}
+          type={icon.type}
         />
       ) : null}
       {!(icon && square) ? <span>{children}</span> : null}

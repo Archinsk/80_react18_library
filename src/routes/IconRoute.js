@@ -1,11 +1,89 @@
+import RbButton from "../components/Bootstrap_5.3.3/RbButton";
 import RbIcon from "../components/Bootstrap_5.3.3/RbIcon";
+import RbNav from "../components/Bootstrap_5.3.3/RbNav";
 
 function IconRoute() {
+  const defaultNav = {
+    itemsList: [
+      {
+        id: "nav-link-alert",
+        name: "NavLink",
+        type: "router-link",
+        href: "/alert",
+        active: false,
+        disabled: false,
+      },
+      {
+        id: "nav-link-home",
+        name: "NavLink с иконкой",
+        type: "router-link",
+        href: "/",
+        icon: "home",
+        active: false,
+        disabled: false,
+      },
+      {
+        id: "nav-link-test-modal-0",
+        name: "ButtonLink",
+        type: "modal-link",
+        href: "modal-test",
+        active: false,
+        disabled: false,
+      },
+      {
+        id: "nav-link-test-modal",
+        name: "ButtonLink с иконкой",
+        type: "modal-link",
+        href: "modal-test",
+        icon: "star",
+        active: false,
+        disabled: false,
+      },
+      {
+        id: "nav-link-collapse",
+        name: "NavLink with Dropdown с иконкой",
+        type: "router-link",
+        href: "#",
+        icon: "favorite",
+        active: false,
+        disabled: false,
+        dropdown: true,
+        dropdownItemsList: [
+          {
+            id: "dropdown-link-collapse-button",
+            name: "DropdownItem",
+            type: "router-link",
+            href: "/collapsebutton",
+            active: false,
+            disabled: false,
+          },
+          {
+            id: "dropdown-link-accordion",
+            name: "DropdownItem",
+            type: "router-link",
+            href: "/accordion",
+            active: false,
+            disabled: false,
+          },
+          {
+            id: "dropdown-link-collapse",
+            name: "DropdownItem с иконкой",
+            type: "router-link",
+            href: "/collapse",
+            active: false,
+            disabled: false,
+            icon: "star",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
-      Icon Route
+      <h2>Icon</h2>
       <h3>Варианты использования</h3>
-      <div>Внутри текста</div>
+      <div className="use-case-title">В тексте</div>
       <div>Lorem ipsum dolor.</div>
       <div>
         Lor
@@ -14,6 +92,7 @@ function IconRoute() {
         <RbIcon name="star" />
         sum dolor.
       </div>
+      <div className="use-case-title">В заголовке</div>
       <h2>Lorem ipsum dolor.</h2>
       <h2>
         Lor
@@ -22,58 +101,17 @@ function IconRoute() {
         <RbIcon name="favorite" />
         sum dolor.
       </h2>
-      {/* <div>Внутри кнопки</div>
-      <vb-button theme="primary" icon="star" class="mr-3">Кнопка</vb-button>
-      <vb-button theme="primary" icon="star" square class="mr-3"
-        >Кнопка</vb-button
-      >
-      <div>Внутри пунктов меню (Navlink, ButtonLink, DropdownItem)</div>
-      <vb-nav tag="ul" class="navbar-nav">
-        <template v-for="navLink of defaultNav.itemsList">
-          <vb-nav-item
-            v-if="!navLink.dropdown"
-            :key="navLink.id"
-            :type="navLink.type"
-            :href="navLink.href"
-            :active="navLink.active"
-            :disabled="navLink.disabled"
-            :icon="navLink.icon"
-            :badge="navLink.badge"
-            :additional-classes="navLink.additionalClasses || {}"
-            :window-data="windowData"
-            @click="$emit('nav-link-click', navLink)"
-            >{{ navLink.name }}</vb-nav-item
-          >
-          <vb-nav-item
-            v-else
-            :key="navLink.id"
-            :type="navLink.type"
-            :href="navLink.href"
-            :active="navLink.active"
-            :disabled="navLink.disabled"
-            :icon="navLink.icon"
-            :badge="navLink.badge"
-            :additional-classes="navLink.additionalClasses || {}"
-            :window-data="windowData"
-            :dropdown="navLink.dropdown"
-            >{{ navLink.name }}
-            <template v-slot:dropdown-menu>
-              <vb-dropdown-item
-                v-for="dropdownItem of navLink.dropdownItemsList"
-                :key="dropdownItem.id"
-                :type="dropdownItem.type"
-                :href="dropdownItem.href"
-                :active="dropdownItem.active"
-                :disabled="dropdownItem.disabled"
-                :icon="dropdownItem.icon"
-                :badge="navLink.badge"
-                @click="$emit('nav-link-click', dropdownItem)"
-                >{{ dropdownItem.name }}</vb-dropdown-item
-              >
-            </template>
-          </vb-nav-item>
-        </template>
-      </vb-nav>*/}
+      <div className="use-case-title">Внутри кнопки</div>
+      <RbButton theme="primary" icon="star" className="me-3">
+        Кнопка
+      </RbButton>
+      <RbButton theme="primary" icon="star" square>
+        Кнопка
+      </RbButton>
+      <div className="use-case-title">
+        Внутри пунктов меню (Navlink, ButtonLink, DropdownItem)
+      </div>
+      <RbNav tag="ul" className="navbar-nav" itemsList={defaultNav.itemsList} />
     </>
   );
 }
