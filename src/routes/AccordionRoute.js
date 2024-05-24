@@ -14,7 +14,7 @@ function AccordionRoute() {
     <>
       <h2>Accordion</h2>
       <h3>Варианты использования</h3>
-      <div>Кастомный</div>
+      <div className="use-case-title">Кастомный</div>
       <RbAccordion custom id="accordion01">
         <div className="accordion-item">
           <RbAccordionItemHeader id="accordion01" index="01">
@@ -41,7 +41,9 @@ function AccordionRoute() {
           </RbAccordionItemBody>
         </div>
       </RbAccordion>
-      <div>Кастомный без скруглений и контурной обводки</div>
+      <div className="use-case-title">
+        Кастомный без скруглений и контурной обводки
+      </div>
       <RbAccordion custom id="accordion02" noBorder>
         <div className="accordion-item">
           <RbAccordionItemHeader id="accordion02" index="01">
@@ -68,8 +70,19 @@ function AccordionRoute() {
           </RbAccordionItemBody>
         </div>
       </RbAccordion>
-      <div>С массивом пунктов аккордеона itemsList</div>
+      <div className="use-case-title">
+        С массивом пунктов аккордеона itemsList
+      </div>
       <RbAccordion id="accordion03" itemsList={defaultAccordion.itemsList} />
+      <div className="use-case-title">
+        С массивом пунктов аккордеона itemsList и множественными отктрытыми
+        вкладками
+      </div>
+      <RbAccordion
+        id="accordion03"
+        itemsList={defaultAccordion.itemsList}
+        multiple
+      />
     </>
   );
 }

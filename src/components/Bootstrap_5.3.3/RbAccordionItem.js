@@ -4,7 +4,7 @@ import React from "react";
 import RbAccordionItemHeader from "./RbAccordionItemHeader";
 import RbAccordionItemBody from "./RbAccordionItemBody";
 
-function RbAccordionItem({ children, id, title, content, index }) {
+function RbAccordionItem({ id, title, content, index }) {
   return (
     <div className="accordion-item">
       <RbAccordionItemHeader id={id} index={index}>

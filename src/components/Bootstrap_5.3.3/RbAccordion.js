@@ -3,7 +3,15 @@
 import React from "react";
 import RbAccordionItem from "./RbAccordionItem";
 
-function RbAccordion({ children, className, id, noBorder, itemsList, custom }) {
+function RbAccordion({
+  children,
+  className,
+  id,
+  noBorder,
+  itemsList,
+  multiple,
+  custom,
+}) {
   let accordionClass = "accordion";
   if (noBorder) {
     accordionClass += " accordion-flush";
@@ -15,7 +23,7 @@ function RbAccordion({ children, className, id, noBorder, itemsList, custom }) {
     const accordionItemsList = itemsList.map((item, index) => {
       return (
         <RbAccordionItem
-          id={id}
+          id={!multiple ? id : null}
           title={item.title}
           content={item.content}
           index={index + 1}

@@ -81,7 +81,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
-          icon: "",
+          icon: "done",
           badge: {
             theme: "danger",
             pill: true,
@@ -116,7 +116,7 @@ function App() {
               href: "/accordion",
               active: false,
               disabled: false,
-              icon: "",
+              icon: "done",
               badge: {
                 theme: "danger",
                 pill: true,
@@ -132,7 +132,7 @@ function App() {
               href: "/accordionitem",
               active: false,
               disabled: false,
-              icon: "",
+              icon: "done",
             },
             {
               id: "dropdown-link-accordion-item-header",
@@ -141,7 +141,7 @@ function App() {
               href: "/accordionitemheader",
               active: false,
               disabled: false,
-              icon: "",
+              icon: "done",
             },
             {
               id: "dropdown-link-accordion-item-body",
@@ -150,7 +150,7 @@ function App() {
               href: "/accordionitembody",
               active: false,
               disabled: false,
-              icon: "",
+              icon: "done",
             },
           ],
         },
