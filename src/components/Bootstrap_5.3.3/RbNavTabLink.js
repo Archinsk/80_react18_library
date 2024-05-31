@@ -3,13 +3,18 @@
 import React from "react";
 import RbButton from "./RbButton";
 
-function RbAlert({ children, className, theme = "secondary", closeButton }) {
+function RbNavTabLink({
+  children,
+  classname,
+  theme = "secondary",
+  closeButton,
+}) {
   let alertClass = "alert";
   if (theme) {
     alertClass += ` alert-${theme}`;
   }
-  if (className) {
-    alertClass += ` ${className}`;
+  if (classname) {
+    alertClass += ` ${classname}`;
   }
   if (closeButton) {
     alertClass += " alert-dismissible fade show";
@@ -34,4 +39,4 @@ function RbAlert({ children, className, theme = "secondary", closeButton }) {
   }
 }
 
-export default RbAlert;
+export default RbNavTabLink;

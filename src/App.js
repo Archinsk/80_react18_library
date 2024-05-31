@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HomeRoute from "./routes/HomeRoute";
 import AlertRoute from "./routes/AlertRoute";
 import IconRoute from "./routes/IconRoute";
@@ -30,6 +30,11 @@ import ModalBodyRoute from "./routes/ModalBodyRoute";
 import ModalFooterRoute from "./routes/ModalFooterRoute";
 import RbHeader from "./components/Bootstrap_5.3.3/RbHeader";
 import RbModal from "./components/Bootstrap_5.3.3/RbModal";
+import TabPaneRoute from "./routes/TabPaneRoute";
+import TabContentRoute from "./routes/TabContentRoute";
+import NavTabLinkRoute from "./routes/NavTabLinkRoute";
+import NavTabsRoute from "./routes/NavTabsRoute";
+import TabsRoute from "./routes/TabsRoute";
 
 function App() {
   const headerData = {
@@ -426,7 +431,7 @@ function App() {
           type: "router-link",
           href: "#",
           active: false,
-          disabled: true,
+          disabled: false,
           dropdown: true,
           dropdownItemsList: [
             {
@@ -630,6 +635,7 @@ function App() {
           href: "/badge",
           active: false,
           disabled: false,
+          icon: "done",
         },
         {
           id: "nav-link-test-modal",
@@ -1135,6 +1141,11 @@ function App() {
           <Route path="/navlink" element={<NavLinkRoute />} />
           <Route path="/navitem" element={<NavItemRoute />} />
           <Route path="/nav" element={<NavRoute />} />
+          <Route path="/tabs" element={<TabsRoute />} />
+          <Route path="/navtabs" element={<NavTabsRoute />} />
+          <Route path="/navtablink" element={<NavTabLinkRoute />} />
+          <Route path="/tabcontent" element={<TabContentRoute />} />
+          <Route path="/tabpane" element={<TabPaneRoute />} />
           <Route path="/offcanvasbutton" element={<OffcanvasButtonRoute />} />
           <Route path="/offcanvas" element={<OffcanvasRoute />} />
           <Route path="/offcanvasheader" element={<OffcanvasHeaderRoute />} />

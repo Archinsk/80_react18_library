@@ -1,73 +1,70 @@
 import RbBadge from "../components/Bootstrap_5.3.3/RbBadge";
+import RbNav from "../components/Bootstrap_5.3.3/RbNav";
+import RbButton from "../components/Bootstrap_5.3.3/RbButton";
 
 function BadgeRoute() {
+  const defaultNav = {
+    itemsList: [
+      {
+        id: "nav-link-home",
+        name: "Home",
+        type: "router-link",
+        href: "/",
+        active: false,
+        disabled: false,
+      },
+      {
+        id: "nav-link-alert",
+        name: "NavLink",
+        type: "modal-link",
+        href: "/alert",
+        active: false,
+        disabled: false,
+        badge: {
+          theme: "danger",
+          pill: false,
+          notNullDisplay: true,
+          value: 25,
+          max: 99,
+        },
+      },
+    ],
+  };
+
+  const defaultBadge = {
+    theme: "danger",
+    pill: false,
+    notNullDisplay: true,
+    value: 25,
+    max: 99,
+  };
+
   return (
     <>
       Badge Route
       <h3>Варианты использования</h3>
-      <div>Без value, с темой</div>
+      <div className="use-case-title">Без value, с темой</div>
       <RbBadge theme="info">Важно!</RbBadge>
-      <div>Скруглённый, с темой</div>
+      <div className="use-case-title">Скруглённый, с темой</div>
       <RbBadge theme="warning" pill>
         Внимание
       </RbBadge>
-      <div>Со значением</div>
+      <div className="use-case-title">Со значением</div>
       <RbBadge value="10" />
-      <div>С указанием максимального значения и его превышением</div>
+      <div className="use-case-title">
+        С указанием максимального значения и его превышением
+      </div>
       <RbBadge value="120" theme="danger" max="99" />
-      <div>С отображением нулевого значения</div>
+      <div className="use-case-title">С отображением нулевого значения</div>
       <RbBadge value="0" theme="danger" />
-      <div>Без отображения нулевого значения</div>
+      <div className="use-case-title">Без отображения нулевого значения</div>
       <RbBadge value="0" theme="danger" notNullDisplay />
-      {/* <div>Внутри BS46NavLink</div>
-      <vb-nav tag="ul" class="navbar-nav">
-        <template v-for="navLink of defaultNav.itemsList">
-          <vb-nav-item
-            v-if="!navLink.dropdown"
-            :key="navLink.id"
-            :type="navLink.type"
-            :href="navLink.href"
-            :active="navLink.active"
-            :disabled="navLink.disabled"
-            :icon="navLink.icon"
-            :badge="navLink.badge"
-            :additional-classes="navLink.additionalClasses || {}"
-            :window-data="windowData"
-            @click="$emit('nav-link-click', navLink)"
-            >{{ navLink.name }}</vb-nav-item
-          >
-          <vb-nav-item
-            v-else
-            :key="navLink.id"
-            :type="navLink.type"
-            :href="navLink.href"
-            :active="navLink.active"
-            :disabled="navLink.disabled"
-            :icon="navLink.icon"
-            :badge="navLink.badge"
-            :additional-classes="navLink.additionalClasses || {}"
-            :window-data="windowData"
-            :dropdown="navLink.dropdown"
-            >{{ navLink.name }}
-            <template v-slot:dropdown-menu>
-              <vb-dropdown-item
-                v-for="dropdownItem of navLink.dropdownItemsList"
-                :key="dropdownItem.id"
-                :type="dropdownItem.type"
-                :href="dropdownItem.href"
-                :active="dropdownItem.active"
-                :disabled="dropdownItem.disabled"
-                :icon="dropdownItem.icon"
-                :badge="navLink.badge"
-                @click="$emit('nav-link-click', dropdownItem)"
-                >{{ dropdownItem.name }}</vb-dropdown-item
-              >
-            </template>
-          </vb-nav-item>
-        </template>
-      </vb-nav>
-      <div>Внутри BS46Button</div>
-      <vb-button theme="secondary" :badge="defaultBadge">Сообщения</vb-button> */}
+      <div className="use-case-title">Внутри пункта навигации</div>
+      <RbNav tag="ul" className="navbar-nav" itemsList={defaultNav.itemsList} />
+      <div className="use-case-title">Внутри кнопки</div>
+      <RbButton theme="secondary" badge={defaultBadge}>
+        Сообщения
+      </RbButton>
     </>
   );
 }
