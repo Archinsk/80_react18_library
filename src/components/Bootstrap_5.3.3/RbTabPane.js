@@ -1,4 +1,4 @@
-// Версия 1.01 от 31.05.2024
+// Версия 1.01 от 04.06.2024
 
 import React from "react";
 
@@ -17,6 +17,7 @@ function RbTabPane({ children, className, id, active }) {
       id={id}
       aria-labelledby={`${id}-tab`}
       role="tabpanel"
+      tabIndex="0"
     >
       {children}
     </div>

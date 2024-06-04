@@ -1,42 +1,26 @@
-// Версия 1.01 от 22.05.2024
+// Версия 1.01 от 04.06.2024
 
 import React from "react";
-import RbButton from "./RbButton";
+import RbNavLink from "./RbNavLink";
 
-function RbNavTabLink({
-  children,
-  classname,
-  theme = "secondary",
-  closeButton,
-}) {
-  let alertClass = "alert";
-  if (theme) {
-    alertClass += ` alert-${theme}`;
-  }
-  if (classname) {
-    alertClass += ` ${classname}`;
-  }
-  if (closeButton) {
-    alertClass += " alert-dismissible fade show";
-  }
-  if (closeButton) {
-    return (
-      <div class={alertClass} role="alert">
-        {children}
-        <RbButton
-          className="btn-close"
-          dataBsDismiss="alert"
-          ariaLabel="Close"
-        />
-      </div>
-    );
-  } else {
-    return (
-      <div class={alertClass} role="alert">
-        {children}
-      </div>
-    );
-  }
+function RbNavTabLink({ children, className, id, href, active, disabled }) {
+  return (
+    <RbNavLink
+      classname={className || null}
+      type="a"
+      id={id + "-tab"}
+      href={`#${href}`}
+      active={active}
+      disabled={disabled}
+      ariaControls={href}
+      ariaSelected={active}
+      dataBsToggle="tab"
+      dataBsTarget={`#${href}`}
+      role="tab"
+    >
+      {children}
+    </RbNavLink>
+  );
 }
 
 export default RbNavTabLink;

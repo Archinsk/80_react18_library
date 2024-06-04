@@ -432,6 +432,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -441,6 +442,7 @@ function App() {
               href: "/tabs",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-nav-tabs",
@@ -449,6 +451,7 @@ function App() {
               href: "/navtabs",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-nav-tab-link",
@@ -457,6 +460,7 @@ function App() {
               href: "/navtablink",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-tab-content",
@@ -465,6 +469,7 @@ function App() {
               href: "/tabcontent",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-tab-pane",
@@ -473,6 +478,7 @@ function App() {
               href: "/tabpane",
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },

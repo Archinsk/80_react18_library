@@ -19,6 +19,8 @@ function RbNavLink({
   withoutNavLinkClass,
   className,
   dataBsToggle,
+  dataBsTarget,
+  role,
 }) {
   let navLinkClass = "";
   if (!withoutNavLinkClass) {
@@ -63,6 +65,8 @@ function RbNavLink({
         href={href}
         className={navLinkClass}
         data-bs-toggle={dataBsToggle || null}
+        data-bs-target={dataBsTarget || null}
+        role={role || null}
       >
         {icon ? iconComponent : null}
         <span>{children}</span>

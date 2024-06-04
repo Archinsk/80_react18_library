@@ -16,6 +16,7 @@ function RbNav({
   itemsList,
   windowData,
   className,
+  role,
 }) {
   let navClass = "nav";
   if (className) {
@@ -98,7 +99,11 @@ function RbNav({
       </ul>
     );
   } else {
-    return <nav className={navClass}>{navItems || children}</nav>;
+    return (
+      <nav className={navClass} role={role || null}>
+        {navItems || children}
+      </nav>
+    );
   }
 }
 

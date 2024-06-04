@@ -1,37 +1,52 @@
-// Версия 1.01 от 22.05.2024
+// Версия 1.01 от 04.06.2024
 
 import React from "react";
-import RbButton from "./RbButton";
+import RbNav from "./RbNav";
+import RbNavTabLink from "./RbNavTabLink";
 
-function RbNavTabs({ children, classname, theme = "secondary", closeButton }) {
-  let alertClass = "alert";
-  if (theme) {
-    alertClass += ` alert-${theme}`;
-  }
-  if (classname) {
-    alertClass += ` ${classname}`;
-  }
-  if (closeButton) {
-    alertClass += " alert-dismissible fade show";
-  }
-  if (closeButton) {
-    return (
-      <div class={alertClass} role="alert">
-        {children}
-        <RbButton
-          className="btn-close"
-          dataBsDismiss="alert"
-          ariaLabel="Close"
-        />
-      </div>
-    );
+function RbNavTabs({
+  children,
+  className,
+  id,
+  pills,
+  position,
+  vertical,
+  fill,
+  justified,
+  itemsList,
+}) {
+  let navContent;
+  if (itemsList && itemsList.length) {
+    navContent = itemsList.map((navTabLink) => {
+      return (
+        <RbNavTabLink
+          key={navTabLink.id}
+          id={id ? id + "-" + navTabLink.id : navTabLink.id}
+          href={id ? id + "-" + navTabLink.id : navTabLink.id}
+          active={navTabLink.active}
+          disabled={navTabLink.disabled}
+        >
+          {navTabLink.name}
+        </RbNavTabLink>
+      );
+    });
   } else {
-    return (
-      <div class={alertClass} role="alert">
-        {children}
-      </div>
-    );
+    navContent = children;
   }
+  return (
+    <RbNav
+      className={className || null}
+      id={id}
+      type={pills ? "pills" : "tabs"}
+      position={position}
+      vertical={vertical}
+      fill={fill}
+      justified={justified}
+      role="tablist"
+    >
+      {navContent}
+    </RbNav>
+  );
 }
 
 export default RbNavTabs;

@@ -10,7 +10,9 @@ function TabPaneRoute() {
       <h3>Варианты использования</h3>
       <RbNavTabs pills>
         <RbNavTabLink href="content-01">Кнопка 1</RbNavTabLink>
-        <RbNavTabLink href="content-02">Кнопка 2</RbNavTabLink>
+        <RbNavTabLink href="content-02" active>
+          Кнопка 2
+        </RbNavTabLink>
       </RbNavTabs>
       <RbTabContent>
         <RbTabPane id="content-01">Неактивная по умолчанию вкладка</RbTabPane>
