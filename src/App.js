@@ -35,6 +35,10 @@ import TabContentRoute from "./routes/TabContentRoute";
 import NavTabLinkRoute from "./routes/NavTabLinkRoute";
 import NavTabsRoute from "./routes/NavTabsRoute";
 import TabsRoute from "./routes/TabsRoute";
+import PaginationRoute from "./routes/PaginationRoute";
+import PaginationItemsPerPageRoute from "./routes/PaginationItemsPerPageRoute";
+import PaginationPageSelectorRoute from "./routes/PaginationPageSelectorRoute";
+import PaginationButtonRoute from "./routes/PaginationButtonRoute";
 
 function App() {
   const headerData = {
@@ -1147,6 +1151,16 @@ function App() {
           <Route path="/navlink" element={<NavLinkRoute />} />
           <Route path="/navitem" element={<NavItemRoute />} />
           <Route path="/nav" element={<NavRoute />} />
+          <Route path="/pagination" element={<PaginationRoute />} />
+          <Route
+            path="/paginationitemsperpage"
+            element={<PaginationItemsPerPageRoute />}
+          />
+          <Route
+            path="/paginationpageselector"
+            element={<PaginationPageSelectorRoute />}
+          />
+          <Route path="/paginationbutton" element={<PaginationButtonRoute />} />
           <Route path="/tabs" element={<TabsRoute />} />
           <Route path="/navtabs" element={<NavTabsRoute />} />
           <Route path="/navtablink" element={<NavTabLinkRoute />} />

@@ -1,0 +1,8 @@
+.islandButton {
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  .page-link {
+    border-radius: 0.25rem;
+  }
+}
