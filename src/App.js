@@ -384,7 +384,7 @@ function App() {
           type: "router-link",
           href: "#",
           active: false,
-          disabled: true,
+          disabled: false,
           dropdown: true,
           dropdownItemsList: [
             {

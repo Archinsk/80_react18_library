@@ -1,7 +1,34 @@
 import React from "react";
+import RbPaginationButton from "./RbPaginationButton";
 
-function RbPaginationItemsPerPage({ children, className }) {
-  return <div className={className || null}>{children}</div>;
+function RbPaginationItemsPerPage({
+  className,
+  itemsPerPage,
+  pageSize,
+  islandButtons,
+}) {
+  let paginationButtons = itemsPerPage.map((valuePerPage) => {
+    let buttonClass = "page-item";
+    if (islandButtons) {
+      buttonClass += " islandButtons";
+    }
+    if (valuePerPage === pageSize) {
+      buttonClass += " active";
+    }
+    if (className) {
+      buttonClass += ` ${className}`;
+    }
+    return (
+      <RbPaginationButton key={valuePerPage} className={buttonClass}>
+        {valuePerPage}
+      </RbPaginationButton>
+    );
+  });
+  return (
+    <nav aria-label="Items per page navigation">
+      <ul className="pagination mb-0">{paginationButtons}</ul>
+    </nav>
+  );
 }
 
 export default RbPaginationItemsPerPage;

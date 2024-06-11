@@ -2,13 +2,13 @@ import React from "react";
 import "./RbPaginationButton.scss";
 
 function RbPaginationButton({ children, className }) {
-  let buttonClass = "page-link";
+  let buttonClass = "page-item";
   if (className) {
     buttonClass += ` ${className}`;
   }
   return (
-    <li>
-      <a href="#" className={buttonClass}>
+    <li className={buttonClass}>
+      <a href="#" className="page-link">
         {children}
       </a>
     </li>

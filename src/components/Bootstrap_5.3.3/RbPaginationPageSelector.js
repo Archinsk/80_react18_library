@@ -30,26 +30,21 @@ function RbPaginationPageSelector({
     }
   }
 
-  let buttonsNums = pages
-    .map((page) => {
-      if (page >= activePage - 1 && page <= activePage + 1) {
-        return (
-          <RbPaginationButton
-            key={page}
-            className={
-              page === activePage ? buttonClass + " active" : buttonClass
-            }
-          >
-            {{ page }}
-          </RbPaginationButton>
-        );
-      } else {
-        return null;
-      }
-    })
-    .filter((item) => {
-      item !== null;
-    });
+  let buttonsNums = [];
+  for (let page = 1; page <= pages; page++) {
+    if (page >= activePage - 1 && page <= activePage + 1) {
+      buttonsNums.push(
+        <RbPaginationButton
+          key={page}
+          className={
+            page === activePage ? buttonClass + " active" : buttonClass
+          }
+        >
+          {page}
+        </RbPaginationButton>
+      );
+    }
+  }
 
   let button5;
   if (activePage < pages - 2) {
