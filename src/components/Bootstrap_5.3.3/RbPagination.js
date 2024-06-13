@@ -1,9 +1,10 @@
+// Версия 1.01 от 13.06.2024
+
 import React from "react";
 import RbPaginationItemsPerPage from "./RbPaginationItemsPerPage";
 import RbPaginationPageSelector from "./RbPaginationPageSelector";
 
 function RbPagination({
-  children,
   className,
   itemsPerPage,
   pageSize,
@@ -13,31 +14,36 @@ function RbPagination({
 }) {
   const pages = Math.ceil(itemsTotal / pageSize);
 
-  return (
-    <div
-      v-if="itemsTotal > itemsPerPage[0]"
-      class="d-flex justify-content-between align-items-center"
-    >
-      <RbPaginationItemsPerPage
-        itemsPerPage={itemsPerPage}
-        pageSize={pageSize}
-        islandButtons={islandButtons}
-        className="d-none d-lg-block"
-      />
-      <div>
-        {pageSize * (page - 1) + 1} -{" "}
-        {page === pages ? itemsTotal : pageSize * page} из {itemsTotal}
-      </div>
-      {itemsTotal > pageSize ? (
-        <RbPaginationPageSelector
-          v-if=""
-          pages={pages}
-          activePage={page}
+  let paginationClass = "d-flex justify-content-between align-items-center";
+  if (className) {
+    paginationClass += ` ${className}`;
+  }
+
+  if (itemsTotal > itemsPerPage[0]) {
+    return (
+      <div className={paginationClass}>
+        <RbPaginationItemsPerPage
+          itemsPerPage={itemsPerPage}
+          pageSize={pageSize}
           islandButtons={islandButtons}
+          className="d-none d-lg-block"
         />
-      ) : null}
-    </div>
-  );
+        <div>
+          {pageSize * (page - 1) + 1} -{" "}
+          {page === pages ? itemsTotal : pageSize * page} из {itemsTotal}
+        </div>
+        {itemsTotal > pageSize ? (
+          <RbPaginationPageSelector
+            pages={pages}
+            activePage={page}
+            islandButtons={islandButtons}
+          />
+        ) : null}
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
 
 export default RbPagination;

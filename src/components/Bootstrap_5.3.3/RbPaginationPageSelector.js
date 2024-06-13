@@ -1,17 +1,11 @@
+// Версия 1.01 от 13.06.2024
+
 import React from "react";
 import RbPaginationButton from "./RbPaginationButton";
 
-function RbPaginationPageSelector({
-  className,
-  pages,
-  activePage,
-  islandButton,
-}) {
+function RbPaginationPageSelector({ pages, activePage, islandButtons }) {
   let buttonClass = "page-item";
-  if (islandButton) {
-    buttonClass += " island-button";
-  }
-  if (islandButton) {
+  if (islandButtons) {
     buttonClass += " island-button";
   }
 

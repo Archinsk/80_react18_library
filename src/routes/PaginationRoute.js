@@ -12,14 +12,14 @@ function PaginationRoute() {
     <>
       <h2>Pagination</h2>
       <h3>Варианты использования</h3>
-      <div>Объединенные кнопки</div>
+      <div className="use-case-title">Объединенные кнопки</div>
       <RbPagination
         itemsTotal={defaultPagination.itemsTotal}
         page={defaultPagination.page}
         pageSize={defaultPagination.pageSize}
         itemsPerPage={defaultPagination.itemsPerPage}
       />
-      <div>Раздельные кнопки</div>
+      <div className="use-case-title">Раздельные кнопки</div>
       <RbPagination
         itemsTotal={defaultPagination.itemsTotal}
         page={defaultPagination.page}

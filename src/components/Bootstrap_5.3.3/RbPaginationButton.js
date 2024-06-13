@@ -1,3 +1,5 @@
+// Версия 1.01 от 13.06.2024
+
 import React from "react";
 import "./RbPaginationButton.scss";
 

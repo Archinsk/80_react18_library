@@ -385,6 +385,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -394,6 +395,7 @@ function App() {
               href: "/pagination",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-pagination-items-per-page",
@@ -402,6 +404,7 @@ function App() {
               href: "/paginationitemsperpage",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-pagination-page-selector",
@@ -410,6 +413,7 @@ function App() {
               href: "/paginationpageselector",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-pagination-button",
@@ -418,6 +422,7 @@ function App() {
               href: "/paginationbutton",
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },

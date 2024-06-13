@@ -1,3 +1,5 @@
+// Версия 1.01 от 13.06.2024
+
 import React from "react";
 import RbPaginationButton from "./RbPaginationButton";
 
@@ -10,7 +12,7 @@ function RbPaginationItemsPerPage({
   let paginationButtons = itemsPerPage.map((valuePerPage) => {
     let buttonClass = "page-item";
     if (islandButtons) {
-      buttonClass += " islandButtons";
+      buttonClass += " island-button";
     }
     if (valuePerPage === pageSize) {
       buttonClass += " active";
