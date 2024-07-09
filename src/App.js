@@ -39,6 +39,7 @@ import PaginationRoute from "./routes/PaginationRoute";
 import PaginationItemsPerPageRoute from "./routes/PaginationItemsPerPageRoute";
 import PaginationPageSelectorRoute from "./routes/PaginationPageSelectorRoute";
 import PaginationButtonRoute from "./routes/PaginationButtonRoute";
+import PreloaderRoute from "./routes/PreloaderRoute";
 
 function App() {
   const headerData = {
@@ -432,7 +433,7 @@ function App() {
           type: "router-link",
           href: "/preloader",
           active: false,
-          disabled: true,
+          disabled: false,
         },
         {
           id: "nav-link-tabs",
@@ -1166,6 +1167,7 @@ function App() {
             element={<PaginationPageSelectorRoute />}
           />
           <Route path="/paginationbutton" element={<PaginationButtonRoute />} />
+          <Route path="/preloader" element={<PreloaderRoute />} />
           <Route path="/tabs" element={<TabsRoute />} />
           <Route path="/navtabs" element={<NavTabsRoute />} />
           <Route path="/navtablink" element={<NavTabLinkRoute />} />
