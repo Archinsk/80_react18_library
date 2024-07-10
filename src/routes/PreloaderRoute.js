@@ -21,7 +21,7 @@ function PreloaderRoute() {
       <RbPreloader
         comment="Загрузка приложения"
         theme="info"
-        comment-color="danger"
+        commentColor="danger"
       />
       <div className="use-case-title">size="sm"</div>
       <RbPreloader size="sm" />
@@ -65,10 +65,12 @@ function PreloaderRoute() {
           comment="Загрузка..."
           theme="primary"
           absolute
-          backdrop-colored
+          backdropColored
         />
       </div>
-      <div>Поверх содержимого родителя, с размытием нижележащего контента</div>
+      <div className="use-case-title">
+        Поверх содержимого родителя, с размытием нижележащего контента
+      </div>
       <div
         className="p-3 position-relative"
         style={{ width: "500px", height: "200px", backgroundColor: "aqua" }}
@@ -86,10 +88,10 @@ function PreloaderRoute() {
           comment="Загрузка..."
           theme="dark"
           absolute
-          backdrop-blurred
+          backdropBlurred
         />
       </div>
-      <div>
+      <div className="use-case-title">
         Поверх содержимого родителя, тонированный фон с размытием нижележащего
         контента
       </div>
@@ -114,8 +116,8 @@ function PreloaderRoute() {
           comment="Загрузка..."
           theme="light"
           absolute
-          backdrop-colored
-          backdrop-blurred
+          backdropColored
+          backdropBlurred
         />
       </div>
     </>

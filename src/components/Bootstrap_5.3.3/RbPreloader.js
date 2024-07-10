@@ -49,9 +49,9 @@ function RbPreloader({
   return (
     <div className={containerClass}>
       <div className={preloaderClass} role="status">
-        <span class="sr-only">Loading...</span>
+        <span className="visually-hidden">Loading...</span>
       </div>
-      {comment ? <div className={commentClass}> comment </div> : null}
+      {comment ? <div className={commentClass}>{comment}</div> : null}
     </div>
   );
 }

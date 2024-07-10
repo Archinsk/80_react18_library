@@ -564,24 +564,29 @@ function HeaderRoute() {
   };
 
   return (
-  <>Header Route
-    <h3>Варианты использования</h3>
-      {/* <div>Без пропсов не отображается</div>
+    <>
+      <h2>Header</h2>
+      <h3>Варианты использования</h3>
+      {/* <div className="use-case-title">Без пропсов не отображается</div>
       <RbHeader />
-      <div>С брендом</div>
+      <div className="use-case-title">С брендом</div>
       <RbHeader id="header-01" brand={defaultNavBar.brand} /> */}
-      <div>Без бренда с несворачивающейся Collapse-панелью навигации</div>
+      <div className="use-case-title">
+        Без бренда с несворачивающейся Collapse-панелью навигации
+      </div>
       <RbHeader
         id="header-02"
         nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
         expand
       />
-      <div>Без бренда с всегда свернутой Collapse-панелью навигации</div>
+      <div className="use-case-title">
+        Без бренда с всегда свернутой Collapse-панелью навигации
+      </div>
       <RbHeader
         id="header-03"
         nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
       />
-      <div>
+      <div className="use-case-title" v>
         Без бренда с Collapse-панелью навигации разворачивающейся при ширине
         окна 576px
       </div>
@@ -591,7 +596,7 @@ function HeaderRoute() {
         expand
         expand-size="sm"
       />
-      <div>
+      <div className="use-case-title">
         Без бренда с Offcanvas-панелью навигации разворачивающейся при ширине
         окна 576px
       </div>
@@ -602,7 +607,7 @@ function HeaderRoute() {
         expand-size="sm"
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         Без бренда с Collapse-панелью навигации разворачивающейся при ширине
         окна 576px и указанием темы фона
       </div>
@@ -613,7 +618,7 @@ function HeaderRoute() {
         expand-size="sm"
         theme="info"
       />
-      <div>
+      <div className="use-case-title">
         Без бренда с Offcanvas-панелью навигации разворачивающейся при ширине
         окна 576px и указанием темы фона
       </div>
@@ -625,7 +630,7 @@ function HeaderRoute() {
         theme="info"
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         C брендом и Collapse-панелью навигации разворачивающейся при ширине окна
         576px и указанием темы фона
       </div>
@@ -637,7 +642,7 @@ function HeaderRoute() {
         expand-size="sm"
         theme="info"
       />
-      <div>
+      <div className="use-case-title">
         C брендом и Offcanvas-панелью навигации разворачивающейся при ширине
         окна 576px и указанием темы фона
       </div>
@@ -650,7 +655,7 @@ function HeaderRoute() {
         theme="info"
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         C брендом и Collapse-панелью навигации разворачивающейся при ширине окна
         576px и указанием темы фона, с ограничением высоты Collapse-панели и
         прокруткой панели
@@ -664,7 +669,7 @@ function HeaderRoute() {
         theme="info"
         scroll
       />
-      <div>
+      <div className="use-case-title">
         C брендом и Offcanvas-панелью навигации разворачивающейся при ширине
         окна 576px и указанием темы фона, с автоскроллом Collapse-панели
       </div>
@@ -678,7 +683,7 @@ function HeaderRoute() {
         scroll
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         C монохромным брендом и Collapse-панелью навигации разворачивающейся при
         ширине окна 576px и указанием темы фона
       </div>
@@ -691,7 +696,7 @@ function HeaderRoute() {
         theme="info"
         monochrome
       />
-      <div>
+      <div className="use-case-title">
         C монохромным брендом и Offcanvas-панелью навигации разворачивающейся
         при ширине окна 576px и указанием темы фона
       </div>
@@ -705,7 +710,7 @@ function HeaderRoute() {
         monochrome
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         C брендом и Collapse-панелью навигации разворачивающейся при ширине окна
         576px и указанием тёмной темы фона
       </div>
@@ -718,7 +723,7 @@ function HeaderRoute() {
         theme="info"
         dark
       />
-      <div>
+      <div className="use-case-title">
         C брендом и Offcanvas-панелью навигации разворачивающейся при ширине
         окна 576px и указанием тёмной темы фона
       </div>
@@ -732,7 +737,7 @@ function HeaderRoute() {
         dark
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         C монохромным брендом и Collapse-панелью навигации разворачивающейся при
         ширине окна 576px и указанием тёмной темы фона
       </div>
@@ -746,7 +751,7 @@ function HeaderRoute() {
         dark
         monochrome
       />
-      <div>
+      <div className="use-case-title">
         C монохромным брендом и Offcanvas-панелью навигации разворачивающейся
         при ширине окна 576px и указанием тёмной темы фона
       </div>
@@ -761,7 +766,7 @@ function HeaderRoute() {
         dark
         offcanvas
       />
-      <div>
+      <div className="use-case-title">
         Контейнерный хедер с монохромным брендом и Collapse-панелью навигации
         разворачивающейся при ширине окна 576px и указанием темы фона (отличие
         от бесконтейнерного можно увидеть, отключив в консоли класс "container"
@@ -777,7 +782,7 @@ function HeaderRoute() {
         monochrome
         container
       />
-      <div>
+      <div className="use-case-title">
         С монохромным брендом и Collapse-панелью навигации разворачивающейся при
         ширине окна 576px и указанием темы фона, выравнивание по центру
       </div>
@@ -791,7 +796,7 @@ function HeaderRoute() {
         monochrome
         justify-content="center"
       />
-      <div>
+      <div className="use-case-title">
         С монохромным брендом и Collapse-панелью навигации разворачивающейся при
         ширине окна 576px и указанием темы фона, равные боковые отступы у
         элементов
@@ -806,7 +811,7 @@ function HeaderRoute() {
         monochrome
         justify-content="around"
       />
-      <div>
+      <div className="use-case-title">
         С монохромным брендом и Collapse-панелью навигации разворачивающейся при
         ширине окна 576px и указанием темы фона, одинаковые отступы между
         элементами
@@ -821,7 +826,8 @@ function HeaderRoute() {
         monochrome
         justify-content="between"
       />
-  </>)
+    </>
+  );
 }
 
 export default HeaderRoute;

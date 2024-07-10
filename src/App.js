@@ -40,6 +40,10 @@ import PaginationItemsPerPageRoute from "./routes/PaginationItemsPerPageRoute";
 import PaginationPageSelectorRoute from "./routes/PaginationPageSelectorRoute";
 import PaginationButtonRoute from "./routes/PaginationButtonRoute";
 import PreloaderRoute from "./routes/PreloaderRoute";
+import CardRoute from "./routes/CardRoute";
+import CardBodyRoute from "./routes/CardBodyRoute";
+import CardHeaderRoute from "./routes/CardHeaderRoute";
+import CardFooterRoute from "./routes/CardFooterRoute";
 
 function App() {
   const headerData = {
@@ -80,9 +84,44 @@ function App() {
           id: "nav-link-card",
           name: "Card",
           type: "router-link",
-          href: "/card",
+          href: "#",
           active: false,
-          disabled: true,
+          disabled: false,
+          dropdown: true,
+          dropdownItemsList: [
+            {
+              id: "dropdown-link-card",
+              name: "Card",
+              type: "router-link",
+              href: "/card",
+              active: false,
+              disabled: false,
+            },
+            {
+              id: "dropdown-link-card-header",
+              name: "CardHeader",
+              type: "router-link",
+              href: "/cardheader",
+              active: false,
+              disabled: false,
+            },
+            {
+              id: "dropdown-link-card-body",
+              name: "CardBody",
+              type: "router-link",
+              href: "/cardbody",
+              active: false,
+              disabled: false,
+            },
+            {
+              id: "dropdown-link-card-footer",
+              name: "CardFooter",
+              type: "router-link",
+              href: "/cardfooter",
+              active: false,
+              disabled: false,
+            },
+          ],
         },
         {
           id: "nav-link-collapse",
@@ -434,6 +473,7 @@ function App() {
           href: "/preloader",
           active: false,
           disabled: false,
+          icon: "done",
         },
         {
           id: "nav-link-tabs",
@@ -1134,6 +1174,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeRoute />} />
           <Route path="/alert" element={<AlertRoute />} />
+          <Route path="/card" element={<CardRoute />} />
+          <Route path="/cardheader" element={<CardHeaderRoute />} />
+          <Route path="/cardbody" element={<CardBodyRoute />} />
+          <Route path="/cardfooter" element={<CardFooterRoute />} />
           <Route path="/icon" element={<IconRoute />} />
           <Route path="/badge" element={<BadgeRoute />} />
           <Route path="/dropdownitem" element={<DropdownItemRoute />} />
