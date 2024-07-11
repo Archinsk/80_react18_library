@@ -44,6 +44,7 @@ import CardRoute from "./routes/CardRoute";
 import CardBodyRoute from "./routes/CardBodyRoute";
 import CardHeaderRoute from "./routes/CardHeaderRoute";
 import CardFooterRoute from "./routes/CardFooterRoute";
+import CardWithImagesRoute from "./routes/CardWithImagesRoute";
 
 function App() {
   const headerData = {
@@ -94,6 +95,14 @@ function App() {
               name: "Card",
               type: "router-link",
               href: "/card",
+              active: false,
+              disabled: false,
+            },
+            {
+              id: "dropdown-link-card-with-images",
+              name: "CardWithImages",
+              type: "router-link",
+              href: "/cardwithimages",
               active: false,
               disabled: false,
             },
@@ -1175,6 +1184,7 @@ function App() {
           <Route path="/" element={<HomeRoute />} />
           <Route path="/alert" element={<AlertRoute />} />
           <Route path="/card" element={<CardRoute />} />
+          <Route path="/cardwithimages" element={<CardWithImagesRoute />} />
           <Route path="/cardheader" element={<CardHeaderRoute />} />
           <Route path="/cardbody" element={<CardBodyRoute />} />
           <Route path="/cardfooter" element={<CardFooterRoute />} />

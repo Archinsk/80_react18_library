@@ -2,6 +2,7 @@ import React from "react";
 import RbCardHeader from "./RbCardHeader";
 import RbCardBody from "./RbCardBody";
 import RbCardFooter from "./RbCardFooter";
+import RbCardWithImages from "./RbCardWithImages";
 
 function RbCard({
   children,
@@ -10,41 +11,67 @@ function RbCard({
   footer,
   noBody,
   imageFull,
-  imageTop,
-  imageBottom,
+  imageStart,
+  imageEnd,
   horizontal,
+  imageStartCols,
+  imageEndCols,
   custom,
 }) {
-  let cardClass = "card";
-  if (className) {
-    cardClass += ` ${className}`;
-  }
-
-  let customCard;
-  let horizontalCard;
-  let defaultCard;
-
-  if (custom) {
-    customCard = <div class={cardClass}>{children}</div>;
-  } else if (horizontal) {
+  if (imageFull || imageStart || imageEnd || horizontal) {
+    return (
+      <RbCardWithImages
+        className={className}
+        imageFull={imageFull}
+        imageStart={imageStart}
+        imageEnd={imageEnd}
+        horizontal={horizontal}
+        imageStartCols={imageStartCols}
+        imageEndCols={imageEndCols}
+      >
+        {children}
+      </RbCardWithImages>
+    );
   } else {
-    console.log("children in card");
-    console.log(children);
-    if (imageFull) {
+    let cardClass = "card";
+    if (className) {
+      cardClass += ` ${className}`;
+    }
+
+    if (custom) {
+      return <div className={cardClass}>{children}</div>;
     } else {
-      defaultCard = (
-        <div class={cardClass}>
-          {header ? <RbCardHeader>Хедер</RbCardHeader> : null}
-          {imageTop ? <img src="images/default.jpg" /> : null}
-          {!noBody ? <RbCardBody>Боди</RbCardBody> : null}
-          {imageBottom ? <img src="images/default.jpg" /> : null}
-          {footer ? <RbCardFooter>Футер</RbCardFooter> : null}
+      let headerContent;
+      let bodyContent;
+      let footerContent;
+
+      if (header && footer && !noBody && children.length === 3) {
+        headerContent = children[0];
+        bodyContent = children[1];
+        footerContent = children[2];
+      } else if (children.length === 2) {
+        if (header && !noBody && !footer) {
+          headerContent = children[0];
+          bodyContent = children[1];
+        } else if (footer && !noBody && !header) {
+          bodyContent = children[0];
+          footerContent = children[1];
+        } else {
+          bodyContent = children;
+        }
+      } else {
+        bodyContent = children;
+      }
+
+      return (
+        <div className={cardClass}>
+          {header ? <RbCardHeader>{headerContent}</RbCardHeader> : null}
+          {!noBody ? <RbCardBody>{bodyContent}</RbCardBody> : null}
+          {footer ? <RbCardFooter>{footerContent}</RbCardFooter> : null}
         </div>
       );
     }
   }
-
-  return customCard || horizontalCard || defaultCard;
 }
 
 export default RbCard;
