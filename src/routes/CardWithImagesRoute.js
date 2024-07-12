@@ -74,13 +74,20 @@ function CardWithImagesRoute() {
         <>Содержимое карточки</>
         <img src="images/default.jpg" />
       </RbCardWithImages>
-      {/* <div>Без хедера и футера, изображение на всю карточку</div>
-      <RbCardWithImages no-body imagePosition="full">
-        <template>
-          <img src="images/default.jpg" className="card-img" />
-        </template>
-        <div className="card-text">Текст поверх карточки</div>
-      </RbCardWithImages> */}
+      <div className="use-case-title">
+        Без хедера и футера, изображение на всю карточку
+      </div>
+      <RbCardWithImages imageFull className="w-25">
+        <img src="images/default.jpg" className="card-img" />
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+        <p class="card-text">
+          <small>Last updated 3 mins ago</small>
+        </p>
+      </RbCardWithImages>
     </>
   );
 }

@@ -16,11 +16,6 @@ function RbCardWithImages({
     cardClass += ` ${className}`;
   }
 
-  let customCard;
-  let horizontalCard;
-  let imageCard;
-  let defaultCard;
-
   if (horizontal) {
     if (children.length === 3) {
       console.log("children in card");
@@ -31,7 +26,7 @@ function RbCardWithImages({
         ? children[0].className + " img-fluid rounded-start"
         : "img-fluid rounded-start",
     });
-    horizontalCard = (
+    /* horizontalCard = (
       <div className={cardClass}>
         <div className="row g-0">
           <div className="col-3">{firstImage}</div>
@@ -41,21 +36,19 @@ function RbCardWithImages({
           <div className="col-3">{children[2]}</div>
         </div>
       </div>
-    );
+    ); */
+    return null;
   } else if (imageFull) {
+    let image = addClassNamesToChildComponent(children[0], "card-img");
+    let content;
+    if (children.length > 1) {
+      content = children.slice(1);
+    }
+
     return (
-      <div className="card text-bg-dark">
-        <img src="images/default.jpg" className="card-img" alt="..." />
-        <div className="card-img-overlay">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <p className="card-text">
-            <small>Last updated 3 mins ago</small>
-          </p>
-        </div>
+      <div className={cardClass}>
+        {image}
+        <div className="card-img-overlay">{content}</div>
       </div>
     );
   } else {
@@ -80,12 +73,20 @@ function RbCardWithImages({
     } else {
       bodyContent = children;
     }
-    defaultCard = (
-      <div className={cardClass}>
-        {imageStart ? <img src="images/default.jpg" /> : null}
-        {imageEnd ? <img src="images/default.jpg" /> : null}
-      </div>
-    );
+
+    if (imageStartContainer) {
+      imageStartContainer = addClassNamesToChildComponent(
+        imageStartContainer,
+        "card-img-top"
+      );
+      console.log(imageStartContainer);
+    }
+    if (imageEndContainer) {
+      imageEndContainer = addClassNamesToChildComponent(
+        imageEndContainer,
+        "card-img-bottom"
+      );
+    }
 
     return (
       <div className={cardClass}>
@@ -94,6 +95,16 @@ function RbCardWithImages({
         {imageEnd ? imageEndContainer : null}
       </div>
     );
+  }
+
+  function addClassNamesToChildComponent(childComponent, additionalClasses) {
+    if (childComponent && additionalClasses) {
+      return React.cloneElement(childComponent, {
+        className: childComponent.className
+          ? childComponent.className + " " + additionalClasses
+          : additionalClasses,
+      });
+    }
   }
 }
 
