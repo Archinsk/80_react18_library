@@ -567,19 +567,141 @@ function HeaderRoute() {
     <>
       <h2>Header</h2>
       <h3>Варианты использования</h3>
-      {/* <div className="use-case-title">Без пропсов не отображается</div>
-      <RbHeader />
-      <div className="use-case-title">С брендом</div>
-      <RbHeader id="header-01" brand={defaultNavBar.brand} /> */}
       <div className="use-case-title">
-        Без бренда с несворачивающейся Collapse-панелью навигации
+        Дефолтный, без пропов (занимает дефолтную высоту)
       </div>
+      <RbHeader />
+      <div className="use-case-title">Дефолтный, с темой</div>
+      <RbHeader theme="info" />
+      <div className="use-case-title">
+        Дефолтный, с брендом, без панели навигации
+      </div>
+      <RbHeader id="header-01" brand={defaultNavBar.brand} />
+      <div className="use-case-title">С навигацией, без бренда</div>
       <RbHeader
         id="header-02"
         nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
-        expand
+      />
+      <div className="use-case-title">С брендом и навигацией</div>
+      <RbHeader
+        id="header-03"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
+      />
+      <div className="use-case-title">С брендом, навигацией и темой</div>
+      <RbHeader
+        id="header-04"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
+        theme="primary"
       />
       <div className="use-case-title">
+        С брендом, навигацией, темой и обозначением темной темы (светлый текст
+        бренда, светлые пункты навигации, темный фон выпадающего списка)
+      </div>
+      <RbHeader
+        id="header-05"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
+        theme="primary"
+        dark
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, обозначением темной темы, с монохромным
+        изображением бренда
+      </div>
+      <RbHeader
+        id="header-06"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
+        theme="primary"
+        dark
+        monochrome
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой и центрированным контентом
+      </div>
+      <RbHeader
+        id="header-07"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
+        theme="warning"
+        justifyContent="center"
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, контент обернут в контейнер
+      </div>
+      <RbHeader
+        id="header-08"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList.slice(0, 4) }}
+        theme="warning"
+        container
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, панель навигации скрыта на экранах любой
+        ширины (по умолчанию развернутая панель ограничена по высоте и имеет
+        автоскролл)
+      </div>
+      <RbHeader
+        id="header-09"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList }}
+        theme="warning"
+        hidden
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, панель навигации скрыта на экранах шириной
+        менее 576px, при ширине экрана 576px и более - панель развернута
+      </div>
+      <RbHeader
+        id="header-10"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList }}
+        theme="warning"
+        hidden
+        hiddenSize="sm"
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, панель навигации скрыта на экранах любой
+        ширины, открытие панели в форме сайдбара
+      </div>
+      <RbHeader
+        id="header-11"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList }}
+        theme="warning"
+        hidden
+        offcanvas
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, панель навигации скрыта на экранах любой
+        ширины, панель навигации без автоскролла (панель не ограничивается по
+        высоте)
+      </div>
+      <RbHeader
+        id="header-12"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList }}
+        theme="warning"
+        hidden
+        noScroll
+      />
+      <div className="use-case-title">
+        С брендом, навигацией, темой, панель навигации скрыта на экранах шириной
+        менее 576px, при ширине экрана 576px и более - панель развернута, панель
+        навигации без автоскролла (панель не ограничивается по высоте)
+      </div>
+      <RbHeader
+        id="header-13"
+        brand={defaultNavBar.brand}
+        nav={{ itemsList: defaultNavBar.nav.itemsList }}
+        theme="warning"
+        hidden
+        hiddenSize="sm"
+        noScroll
+      />
+      {/* <div className="use-case-title">
         Без бренда с всегда свернутой Collapse-панелью навигации
       </div>
       <RbHeader
@@ -825,7 +947,7 @@ function HeaderRoute() {
         theme="info"
         monochrome
         justify-content="between"
-      />
+      /> */}
     </>
   );
 }

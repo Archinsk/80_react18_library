@@ -6,67 +6,65 @@ import RbNav from "./RbNav";
 
 function RbHeader({
   id,
-  offcanvas,
-  expand,
-  expandSize,
+  brand,
+  nav,
   theme,
   dark,
   monochrome,
-  brand,
-  nav,
-  container,
   justifyContent,
-  scroll,
-  windowData,
+  container,
+  hidden,
+  hiddenSize,
+  offcanvas,
+  noScroll,
 }) {
-  const isCollapseButton = !!(
-    !offcanvas &&
-    nav &&
-    nav.itemsList &&
-    nav.itemsList.length &&
-    !(expand && !expandSize)
-  );
+  let headerNav;
+  let headerNavBar;
+  let headerContent;
 
-  const isOffcanvasButton = !!(
-    offcanvas &&
-    nav &&
-    nav.itemsList &&
-    nav.itemsList.length &&
-    !(expand && !expandSize)
-  );
-
-  console.log("nav in header");
-  console.log(nav);
-
-  if (nav || brand) {
-    return (
-      <header className={container && theme ? "bg-" + theme : ""}>
-        <div className={container ? "container" : ""}>
-          <RbNavBar
-            id={id ? id + "-navbar" : ""}
-            expand={offcanvas || expand}
-            expandSize={expandSize && !offcanvas ? expandSize : ""}
-            theme={theme}
-            dark={dark}
-            monochromeBrandImage={monochrome}
-            brand={brand}
-            withoutToggler={!isCollapseButton}
-            justifyContent={justifyContent}
-            className={container ? "px-0" : ""}
-          >
-            <RbNav
-              scroll={scroll}
-              tag="ul"
-              className="navbar-nav"
-              itemsList={nav.itemsList}
-            />
-          </RbNavBar>
-        </div>
-      </header>
+  if (nav) {
+    headerNav = (
+      <RbNav
+        scroll={!noScroll && !offcanvas}
+        scrollSize={!noScroll && !offcanvas && hiddenSize ? hiddenSize : null}
+        tag="ul"
+        className="navbar-nav"
+        itemsList={nav.itemsList}
+      />
     );
-  } else {
-    return null;
   }
+  if (brand || nav) {
+    headerNavBar = (
+      <RbNavBar
+        id={id ? id + "-navbar" : "header-navbar"}
+        brand={brand}
+        theme={theme}
+        dark={dark}
+        monochromeBrandImage={monochrome}
+        hidden={hidden}
+        hiddenSize={hiddenSize}
+        justifyContent={justifyContent}
+        offcanvas={offcanvas}
+      >
+        {headerNav || null}
+      </RbNavBar>
+    );
+  }
+
+  if (container) {
+    headerContent = <div className="container">{headerNavBar}</div>;
+  } else {
+    headerContent = headerNavBar;
+  }
+
+  return (
+    <header
+      className={theme ? "bg-" + theme : null}
+      style={brand || nav ? null : { height: "3.5rem" }}
+    >
+      {headerContent}
+    </header>
+  );
 }
 
 export default RbHeader;

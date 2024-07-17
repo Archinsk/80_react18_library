@@ -6,6 +6,7 @@ import RbNavLink from "./RbNavLink";
 
 function RbNav({
   children,
+  className,
   tag,
   type,
   position,
@@ -13,9 +14,9 @@ function RbNav({
   fill,
   justified,
   scroll,
+  scrollSize,
   itemsList,
   windowData,
-  className,
   role,
 }) {
   let navClass = "nav";
@@ -43,6 +44,10 @@ function RbNav({
   }
   if (scroll) {
     navClass += " navbar-nav-scroll flex-nowrap";
+
+    if (scrollSize) {
+      navClass += ` flex-${scrollSize}-wrap`;
+    }
   }
 
   console.log("itemsList in nav");

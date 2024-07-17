@@ -1,3 +1,4 @@
+import RbNav from "../components/Bootstrap_5.3.3/RbNav";
 import RbNavItem from "../components/Bootstrap_5.3.3/RbNavItem";
 
 function NavItemRoute() {
@@ -40,33 +41,23 @@ function NavItemRoute() {
     <>
       <h2>NavItem</h2>
       <h3>Варианты использования</h3>
-      <div>Обычная ссылка</div>
-      <ul className="nav">
+      <RbNav>
         <RbNavItem type="a" href="https://ya.ru">
-          Яндекс
+          Обычная ссылка
         </RbNavItem>
-      </ul>
-      <div>Ссылка-роутер</div>
-      <ul className="nav">
-        <RbNavItem href="/nav">Страница Nav</RbNavItem>
-      </ul>
-      <div>Отключенная</div>
-      <ul className="nav">
+        <RbNavItem href="/nav">Ссылка-роутер</RbNavItem>
         <RbNavItem href="/nav" disabled>
           Отключенная
         </RbNavItem>
-      </ul>
-      <div>Выпадающий список</div>
-      <ul className="nav">
         <RbNavItem
           type="a"
           href="https://ya.ru"
           dropdown
           dropdownItemsList={defaultDropdownItemsList}
         >
-          Выбрать
+          Выпадающий список
         </RbNavItem>
-      </ul>
+      </RbNav>
     </>
   );
 }

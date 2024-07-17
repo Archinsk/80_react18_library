@@ -1,12 +1,13 @@
 //import React from "react";
 import RbDropdownItem from "../components/Bootstrap_5.3.3/RbDropdownItem";
+import RbDropdownMenu from "../components/Bootstrap_5.3.3/RbDropdownMenu";
 
 function DropdownItemRoute() {
   return (
     <>
       <h2>DropdownItem</h2>
       <h3>Варианты использования</h3>
-      <div className="dropdown-menu show p-0 border-0">
+      <RbDropdownMenu custom className="show position-static">
         <RbDropdownItem type="a" href="https://ya.ru">
           Обычная ссылка
         </RbDropdownItem>
@@ -17,12 +18,10 @@ function DropdownItemRoute() {
         <RbDropdownItem href="/nav" disabled>
           Отключенная
         </RbDropdownItem>
-      </div>
-
-      <div>С иконкой</div>
-      <RbDropdownItem href="/icon" icon="star">
-        Избранное
-      </RbDropdownItem>
+        <RbDropdownItem href="/icon" icon="star">
+          С иконкой
+        </RbDropdownItem>
+      </RbDropdownMenu>
     </>
   );
 }

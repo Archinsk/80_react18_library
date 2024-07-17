@@ -5,6 +5,7 @@ import "./RbNavItem.scss";
 import RbModalButton from "./RbModalButton";
 import RbNavLink from "./RbNavLink";
 import RbDropdownItem from "./RbDropdownItem";
+import RbDropdownMenu from "./RbDropdownMenu";
 
 function RbNavItem({
   children,
@@ -149,7 +150,7 @@ function RbNavItem({
         >
           {children}
         </RbNavLink>
-        <div className="dropdown-menu">{dropdownItems}</div>
+        <RbDropdownMenu custom>{dropdownItems}</RbDropdownMenu>
       </li>
     );
   }

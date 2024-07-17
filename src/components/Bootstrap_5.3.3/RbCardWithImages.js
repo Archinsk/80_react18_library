@@ -17,27 +17,75 @@ function RbCardWithImages({
   }
 
   if (horizontal) {
+    let imageStartContainer;
+    let bodyContent;
+    let imageEndContainer;
+    let imageStartContainerClass;
+    let imageEndContainerClass;
+
     if (children.length === 3) {
-      console.log("children in card");
-      console.log(children);
+      imageStartContainerClass = imageStartCols
+        ? `col-${imageStartCols}`
+        : "col-4";
+      let firstImage = addClassNamesToChildComponent(
+        children[0],
+        "img-fluid rounded-start w-100"
+      );
+      imageStartContainer = (
+        <div className={imageStartContainerClass}>{firstImage}</div>
+      );
+      bodyContent = children[1];
+      imageEndContainerClass = imageStartCols ? `col-${imageEndCols}` : "col-4";
+      let secondImage = addClassNamesToChildComponent(
+        children[2],
+        "img-fluid rounded-end w-100"
+      );
+      imageEndContainer = (
+        <div className={imageEndContainerClass}>{secondImage}</div>
+      );
+    } else if (children.length === 2) {
+      if (imageStart && !imageEnd) {
+        imageStartContainerClass = imageStartCols
+          ? `col-${imageStartCols}`
+          : "col-4";
+        let firstImage = addClassNamesToChildComponent(
+          children[0],
+          "img-fluid rounded-start w-100"
+        );
+        imageStartContainer = (
+          <div className={imageStartContainerClass}>{firstImage}</div>
+        );
+        bodyContent = children[1];
+      } else if (imageEnd && !imageStart) {
+        bodyContent = children[0];
+        imageEndContainerClass = imageStartCols
+          ? `col-${imageEndCols}`
+          : "col-4";
+        let secondImage = addClassNamesToChildComponent(
+          children[1],
+          "img-fluid rounded-end w-100"
+        );
+        imageEndContainer = (
+          <div className={imageEndContainerClass}>{secondImage}</div>
+        );
+      } else {
+        bodyContent = children;
+      }
+    } else {
+      bodyContent = children;
     }
-    let firstImage = React.cloneElement(children[0], {
-      className: className
-        ? children[0].className + " img-fluid rounded-start"
-        : "img-fluid rounded-start",
-    });
-    /* horizontalCard = (
+
+    return (
       <div className={cardClass}>
         <div className="row g-0">
-          <div className="col-3">{firstImage}</div>
-          <div className="col-6">
-            <div className="card-body">{children[1]}</div>
+          {imageStart ? imageStartContainer : null}
+          <div className="col">
+            <RbCardBody>{bodyContent}</RbCardBody>
           </div>
-          <div className="col-3">{children[2]}</div>
+          {imageEnd ? imageEndContainer : null}
         </div>
       </div>
-    ); */
-    return null;
+    );
   } else if (imageFull) {
     let image = addClassNamesToChildComponent(children[0], "card-img");
     let content;

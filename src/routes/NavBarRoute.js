@@ -7,10 +7,9 @@ function NavBarRoute() {
   const defaultNavBar = {
     dark: true,
     theme: "primary",
-    scroll: false,
     monochromeBrandImage: true,
-    expand: true,
-    expandSize: "sm",
+    hidden: true,
+    hiddenSize: "sm",
     brand: {
       href: "/",
       name: "Viewer",
@@ -101,7 +100,9 @@ function NavBarRoute() {
     <>
       <h2>NavBar</h2>
       <h3>Варианты использования</h3>
-      <div>Без пропов (только id)</div>
+      <div className="use-case-title">
+        Без пропов (только id, навигация проброшена в слот)
+      </div>
       <RbNavBar id="nav-bar-01">
         <RbNav
           tag="ul"
@@ -109,7 +110,9 @@ function NavBarRoute() {
           itemsList={defaultNavBar.nav.itemsList}
         />
       </RbNavBar>
-      <div>С указанием темы фона (темный текст на светлом фоне)</div>
+      <div className="use-case-title">
+        С указанием темы (по умолчанию темный текст на светлом фоне)
+      </div>
       <RbNavBar id="nav-bar-02" theme="warning">
         <RbNav
           tag="ul"
@@ -117,9 +120,9 @@ function NavBarRoute() {
           itemsList={defaultNavBar.nav.itemsList}
         />
       </RbNavBar>
-      <div>
-        С брендом, указанием темы фона, темный фон (светлый текст на темном
-        фоне)
+      <div className="use-case-title">
+        С монохромным брендом, указанием темы, темный фон (светлый текст на
+        темном фоне)
       </div>
       <RbNavBar
         id="nav-bar-03"
@@ -134,36 +137,11 @@ function NavBarRoute() {
           itemsList={defaultNavBar.nav.itemsList}
         />
       </RbNavBar>
-      <div>С прокруткой на малых экранах</div>
-      <RbNavBar id="nav-bar-04">
-        <RbNav
-          tag="ul"
-          scroll
-          className="navbar-nav"
-          itemsList={defaultNavBar.nav.itemsList}
-        />
-      </RbNavBar>
-      <div>Несворачивающаяся панель, без коллапс-кнопки</div>
+      <div className="use-case-title">С брендом и выравниванием по центру</div>
       <RbNavBar
-        id="nav-bar-05"
+        id="nav-bar-04"
         theme="warning"
         brand={defaultNavBar.brand}
-        withoutToggler
-        expand
-      >
-        <RbNav
-          tag="ul"
-          className="navbar-nav"
-          itemsList={defaultNavBar.nav.itemsList}
-        />
-      </RbNavBar>
-      <div>Несворачивающаяся панель с выравниванием по центру</div>
-      <RbNavBar
-        id="nav-bar-06"
-        theme="warning"
-        brand={defaultNavBar.brand}
-        withoutToggler
-        expand
         justifyContent="center"
       >
         <RbNav
@@ -172,16 +150,12 @@ function NavBarRoute() {
           itemsList={defaultNavBar.nav.itemsList}
         />
       </RbNavBar>
-      <div>Панель, сворачивающаяся на малых экранах</div>
+      <div className="use-case-title">Всегда свернутая панель навигации</div>
       <RbNavBar
-        id="nav-bar-07"
-        dark={defaultNavBar.dark}
-        theme={defaultNavBar.theme}
-        scroll={defaultNavBar.scroll}
+        id="nav-bar-05"
+        theme="warning"
         brand={defaultNavBar.brand}
-        monochromeBrandImage={defaultNavBar.monochromeBrandImage}
-        expand={defaultNavBar.expand}
-        expandSize={defaultNavBar.expandSize}
+        hidden
       >
         <RbNav
           tag="ul"
@@ -189,14 +163,34 @@ function NavBarRoute() {
           itemsList={defaultNavBar.nav.itemsList}
         />
       </RbNavBar>
-      <div>Разворачивающаяся боковой панелью на малых экранах (доделать)</div>
+      <div className="use-case-title">
+        Панель навигации, разворачивающаяся на экранах шириной 576px и более
+      </div>
       <RbNavBar
-        id="nav-bar-08"
+        id="nav-bar-06"
+        dark={defaultNavBar.dark}
+        theme={defaultNavBar.theme}
+        brand={defaultNavBar.brand}
+        monochromeBrandImage={defaultNavBar.monochromeBrandImage}
+        hidden={defaultNavBar.hidden}
+        hiddenSize={defaultNavBar.hiddenSize}
+      >
+        <RbNav
+          tag="ul"
+          className="navbar-nav"
+          itemsList={defaultNavBar.nav.itemsList}
+        />
+      </RbNavBar>
+      <div className="use-case-title">
+        Панель навигации, разворачивающаяся на экранах шириной 576px и более, на
+        экранах шириной менее 576px разворачивается сайдбаром
+      </div>
+      <RbNavBar
+        id="nav-bar-07"
         theme="warning"
         brand={defaultNavBar.brand}
-        expand
-        expandSize={defaultNavBar.expandSize}
-        withoutToggler
+        hidden
+        hiddenSize={defaultNavBar.hiddenSize}
         offcanvas
       >
         <RbNav

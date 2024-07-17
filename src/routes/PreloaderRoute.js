@@ -10,7 +10,7 @@ function PreloaderRoute() {
       <div className="use-case-title">С темой</div>
       <RbPreloader theme="primary" />
       <div className="use-case-title">С темой и задним фоном</div>
-      <RbPreloader theme="danger" backdrop-colored />
+      <RbPreloader theme="danger" backdropColored />
       <div className="use-case-title">Тип "grow"</div>
       <RbPreloader type="grow" />
       <div className="use-case-title">С комментарием</div>

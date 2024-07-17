@@ -33,7 +33,7 @@ function ModalHeaderRoute() {
       <RbModalButton targetId="modal-04" className="btn-primary me-3 mb-3">
         Кастомный заголовок
       </RbModalButton>
-      <RbModal id="modal-04" header customModal>
+      <RbModal id="modal-04" custom>
         <RbModalHeader noTitle>
           <i>
             Кастомные <b>теги</b> заголовка

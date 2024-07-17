@@ -45,6 +45,10 @@ import CardBodyRoute from "./routes/CardBodyRoute";
 import CardHeaderRoute from "./routes/CardHeaderRoute";
 import CardFooterRoute from "./routes/CardFooterRoute";
 import CardWithImagesRoute from "./routes/CardWithImagesRoute";
+import DropdownMenuRoute from "./routes/DropdownMenuRoute";
+import TableRoute from "./routes/TableRoute";
+import TableRowRoute from "./routes/TableRowRoute";
+import TableCellRoute from "./routes/TableCellRoute";
 
 function App() {
   const headerData = {
@@ -88,6 +92,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -97,6 +102,7 @@ function App() {
               href: "/card",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-card-with-images",
@@ -105,6 +111,7 @@ function App() {
               href: "/cardwithimages",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-card-header",
@@ -113,6 +120,7 @@ function App() {
               href: "/cardheader",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-card-body",
@@ -121,6 +129,7 @@ function App() {
               href: "/cardbody",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-card-footer",
@@ -129,6 +138,7 @@ function App() {
               href: "/cardfooter",
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },
@@ -417,7 +427,16 @@ function App() {
               icon: "done",
             },
             {
-              id: "dropdown-link-nav-dropdown-item",
+              id: "dropdown-link-dropdown-menu",
+              name: "DropdownMenu",
+              type: "router-link",
+              href: "/dropdownmenu",
+              active: false,
+              disabled: false,
+              icon: "done",
+            },
+            {
+              id: "dropdown-link-dropdown-item",
               name: "DropdownItem",
               type: "router-link",
               href: "/dropdownitem",
@@ -542,33 +561,6 @@ function App() {
           ],
         },
         {
-          id: "nav-link-transition",
-          name: "Transition",
-          type: "router-link",
-          href: "#",
-          active: false,
-          disabled: true,
-          dropdown: true,
-          dropdownItemsList: [
-            {
-              id: "dropdown-link-transition",
-              name: "Transition",
-              type: "router-link",
-              href: "/transition",
-              active: false,
-              disabled: false,
-            },
-            {
-              id: "dropdown-link-transition-group",
-              name: "TransitionGroup",
-              type: "router-link",
-              href: "/transitiongroup",
-              active: false,
-              disabled: false,
-            },
-          ],
-        },
-        {
           id: "nav-link-nav-bar",
           name: "NavBar",
           type: "router-link",
@@ -653,6 +645,7 @@ function App() {
           href: "/header",
           active: false,
           disabled: false,
+          icon: "done",
         },
         {
           id: "nav-link-icon",
@@ -725,15 +718,15 @@ function App() {
               type: "router-link",
               href: "/table",
               active: false,
-              disabled: true,
+              disabled: false,
             },
             {
               id: "dropdown-link-table-row",
-              name: "tablerow",
+              name: "TableRow",
               type: "router-link",
               href: "/tablerow",
               active: false,
-              disabled: true,
+              disabled: false,
             },
             {
               id: "dropdown-link-table-cell",
@@ -741,7 +734,7 @@ function App() {
               type: "router-link",
               href: "/tablecell",
               active: false,
-              disabled: true,
+              disabled: false,
             },
           ],
         },
@@ -789,437 +782,22 @@ function App() {
         },
       ],
     },
-    /*nav: {
-      itemsList: [
-        {
-          id: "nav-link-home",
-          name: "Home",
-          type: "router-link",
-          href: "/",
-          active: false,
-          disabled: false,
-          icon: "home",
-          badge: {
-            theme: "danger",
-            pill: true,
-            notNullDisplay: true,
-            value: 25,
-            max: 99,
-          },
-        },
-        {
-          id: "nav-link-alert",
-          name: "Alert",
-          type: "router-link",
-          href: "/alert",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-card",
-          name: "Card",
-          type: "router-link",
-          href: "/card",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-collapse",
-          name: "Collapse",
-          type: "router-link",
-          href: "/collapse",
-
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-collapse-button",
-          name: "CollapseButton",
-          type: "router-link",
-          href: "/collapsebutton",
-
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-accordion",
-          name: "Accordion",
-          type: "router-link",
-          href: "/accordion",
-          active: false,
-          disabled: false,
-          icon: "",
-          badge: {
-            theme: "danger",
-            pill: true,
-            notNullDisplay: true,
-            value: 25,
-            max: 99,
-          },
-        },
-        {
-          id: "nav-link-filter",
-          name: "Filter",
-          type: "router-link",
-          href: "/filter",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-form",
-          name: "Form",
-          type: "router-link",
-          href: "/form",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-select",
-          name: "Select",
-          type: "router-link",
-          href: "/select",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-checkbox",
-          name: "Checkbox",
-          type: "router-link",
-          href: "/checkbox",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-checkboxes-group",
-          name: "CheckboxesGroup",
-          type: "router-link",
-          href: "/checkboxesgroup",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-radio-group",
-          name: "RadioGroup",
-          type: "router-link",
-          href: "/radiogroup",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-date-range",
-          name: "DateRange",
-          type: "router-link",
-          href: "/daterange",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-input",
-          name: "Input",
-          type: "router-link",
-          href: "/input",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-textarea",
-          name: "Textarea",
-          type: "router-link",
-          href: "/textarea",
-          active: false,
-          disabled: false,
-        },
-
-        {
-          id: "nav-link-items-list",
-          name: "ItemsList",
-          type: "router-link",
-          href: "/itemslist",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-modal",
-          name: "Modal",
-          type: "router-link",
-          href: "/modal",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-modal-button",
-          name: "ModalButton",
-          type: "router-link",
-          href: "/modalbutton",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-nav",
-          name: "Nav",
-          type: "router-link",
-          href: "/nav",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-nav-item",
-          name: "NavItem",
-          type: "router-link",
-          href: "/navitem",
-          active: false,
-          disabled: false,
-          icon: "done",
-        },
-        {
-          id: "dropdown-link-nav-link",
-          name: "NavLink",
-          type: "router-link",
-          href: "/navlink",
-          active: false,
-          disabled: false,
-          icon: "done",
-        },
-        {
-          id: "dropdown-link-nav-dropdown-item",
-          name: "DropdownItem",
-          type: "router-link",
-          href: "/dropdownitem",
-          icon: "done",
-
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-pagination",
-          name: "Pagination",
-          type: "router-link",
-          href: "/pagination",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-pagination-items-per-page",
-          name: "PaginationItemsPerPage",
-          type: "router-link",
-          href: "/paginationitemsperpage",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-pagination-page-selector",
-          name: "PaginationPageSelector",
-          type: "router-link",
-          href: "/paginationpageselector",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-pagination-button",
-          name: "PaginationButton",
-          type: "router-link",
-          href: "/paginationbutton",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-preloader",
-          name: "Preloader",
-          type: "router-link",
-          href: "/preloader",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-tabs",
-          name: "Tabs",
-          type: "router-link",
-          href: "/tabs",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-nav-tabs",
-          name: "NavTabs",
-          type: "router-link",
-          href: "/navtabs",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-nav-tab-link",
-          name: "NavTabLink",
-          type: "router-link",
-          href: "/navtablink",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-tab-content",
-          name: "TabContent",
-          type: "router-link",
-          href: "/tabcontent",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-tab-pane",
-          name: "TabPane",
-          type: "router-link",
-          href: "/tabpane",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-transition",
-          name: "Transition",
-          type: "router-link",
-          href: "/transition",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-transition-group",
-          name: "TransitionGroup",
-          type: "router-link",
-          href: "/transitiongroup",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-nav-bar",
-          name: "NavBar",
-          type: "router-link",
-          href: "/navbar",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-nav-bar-brand",
-          name: "NavBarBrand",
-          type: "router-link",
-          href: "/navbarbrand",
-          active: false,
-          disabled: false,
-          icon: "done",
-        },
-        {
-          id: "dropdown-link-offcanvas",
-          name: "Offcanvas",
-          type: "router-link",
-          href: "/offcanvas",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-offcanvas-button",
-          name: "OffcanvasButton",
-          type: "router-link",
-          href: "/offcanvasbutton",
-
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-header",
-          name: "Header",
-          type: "router-link",
-          href: "/header",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-icon",
-          name: "Icon",
-          type: "router-link",
-          href: "/icon",
-
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-button",
-          name: "Button",
-          type: "router-link",
-          href: "/button",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "dropdown-link-button-link",
-          name: "ButtonLink",
-          type: "router-link",
-          href: "/buttonlink",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-badge",
-          name: "Badge",
-          type: "router-link",
-          href: "/badge",
-
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-test-modal",
-          name: "Test Modal",
-          type: "modal-link",
-          href: "modal-test",
-          icon: "star",
-          active: false,
-          disabled: false,
-        },
-        {
-          id: "nav-link-test-icon",
-          name: "Test Icon",
-          type: "modal-link",
-          href: "modal-test",
-          active: false,
-          disabled: false,
-          icon: "favorite",
-          additionalClasses: {
-            navItem: null,
-            navLink: "btn-square-xl btn-outline-light",
-          },
-        },
-        {
-          id: "nav-link-test-badge",
-          name: "Test Badge",
-          type: "modal-link",
-          href: "modal-test",
-          active: false,
-          disabled: false,
-          icon: "mail",
-          additionalClasses: {
-            navItem: null,
-            navLink: "btn-square-xl btn-outline-light",
-          },
-          badge: {
-            theme: "danger",
-            pill: true,
-            notNullDisplay: true,
-            value: 25,
-            max: 99,
-          },
-        },
-      ],
-    },*/
   };
 
   return (
     <div className="App">
       <RbHeader
         id="header"
-        expand
-        expandSize="xl"
+        brand={headerData.brand}
+        nav={headerData.nav}
         theme="secondary"
         dark
         monochrome
-        brand={headerData.brand}
-        nav={headerData.nav}
         justifyContent="between"
+        container
+        hidden
+        hiddenSize="xl"
+        offcanvas
       />
       <RbModal id="modal-test">Тестовое модальное окно</RbModal>
       <div className="container">
@@ -1234,6 +812,7 @@ function App() {
           <Route path="/icon" element={<IconRoute />} />
           <Route path="/badge" element={<BadgeRoute />} />
           <Route path="/dropdownitem" element={<DropdownItemRoute />} />
+          <Route path="/dropdownmenu" element={<DropdownMenuRoute />} />
           <Route path="/buttonlink" element={<ButtonLinkRoute />} />
           <Route path="/button" element={<ButtonRoute />} />
           <Route path="/collapse" element={<CollapseRoute />} />
@@ -1279,6 +858,9 @@ function App() {
           <Route path="/modalheader" element={<ModalHeaderRoute />} />
           <Route path="/modalbody" element={<ModalBodyRoute />} />
           <Route path="/modalfooter" element={<ModalFooterRoute />} />
+          <Route path="/table" element={<TableRoute />} />
+          <Route path="/tablerow" element={<TableRowRoute />} />
+          <Route path="/tablecell" element={<TableCellRoute />} />
         </Routes>
       </div>
     </div>

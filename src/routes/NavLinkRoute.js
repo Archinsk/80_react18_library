@@ -1,3 +1,4 @@
+import RbNav from "../components/Bootstrap_5.3.3/RbNav";
 import RbNavLink from "../components/Bootstrap_5.3.3/RbNavLink";
 
 function NavLinkRoute() {
@@ -5,20 +6,18 @@ function NavLinkRoute() {
     <>
       <h2>NavLink</h2>
       <h3>Варианты использования</h3>
-      <div>Обычная ссылка</div>
-      <RbNavLink type="a" href="https://ya.ru">
-        Яндекс
-      </RbNavLink>
-      <div>Ссылка-роутер</div>
-      <RbNavLink href="/nav">Страница Nav</RbNavLink>
-      <div>Отключенная</div>
-      <RbNavLink href="/nav" disabled>
-        Отключенная
-      </RbNavLink>
-      <div>Ссылка-роутер с иконкой</div>
-      <RbNavLink href="/nav" icon="favorite">
-        Страница Nav
-      </RbNavLink>
+      <RbNav>
+        <RbNavLink type="a" href="https://ya.ru">
+          Обычная ссылка
+        </RbNavLink>
+        <RbNavLink href="/nav">Ссылка-роутер</RbNavLink>
+        <RbNavLink href="/nav" disabled>
+          Отключенная
+        </RbNavLink>
+        <RbNavLink href="/nav" icon="favorite">
+          С иконкой
+        </RbNavLink>
+      </RbNav>
     </>
   );
 }

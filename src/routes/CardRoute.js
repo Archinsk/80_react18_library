@@ -45,7 +45,7 @@ function CardRoute() {
         Карточка с изображениями (в том числе горизонтальая)
       </div>
       <div>
-        См. <Link to="/pagination">Pagination</Link>
+        См. <Link to="/cardwithimages">CardWithImages</Link>
       </div>
       {/* <div className="use-case-title">Горизонтальная с картинкой слева</div>
       <RbCard horizontal>
