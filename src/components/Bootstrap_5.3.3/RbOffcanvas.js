@@ -44,7 +44,7 @@ function RbOffcanvas({
     <div
       className="offcanvas offcanvas-start"
       id={id}
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby={id + "Label"}
       data-bs-backdrop={backdrop}
       data-bs-keyboard={noKeyboard ? "false" : null}

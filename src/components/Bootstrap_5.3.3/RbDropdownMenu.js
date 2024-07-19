@@ -6,7 +6,7 @@ function RbDropdownMenu({ children, className, custom, itemsList }) {
     dropdownMenuClass += ` ${className}`;
   }
   if (custom) {
-    return <div class={dropdownMenuClass}>{children}</div>;
+    return <div className={dropdownMenuClass}>{children}</div>;
   } else {
     return null;
   }

@@ -49,6 +49,7 @@ import DropdownMenuRoute from "./routes/DropdownMenuRoute";
 import TableRoute from "./routes/TableRoute";
 import TableRowRoute from "./routes/TableRowRoute";
 import TableCellRoute from "./routes/TableCellRoute";
+import GridRoute from "./routes/GridRoute";
 
 function App() {
   const headerData = {
@@ -287,7 +288,7 @@ function App() {
               active: false,
               disabled: false,
             },
-            {
+            /*{
               id: "nav-link-form-components3",
               name: "TestLevel3",
               type: "router-link",
@@ -321,7 +322,7 @@ function App() {
                   disabled: false,
                 },
               ],
-            },
+            },*/
           ],
         },
         {
@@ -701,7 +702,8 @@ function App() {
           type: "router-link",
           href: "/grid",
           active: false,
-          disabled: true,
+          disabled: false,
+          icon: "done",
         },
         {
           id: "table-link-card",
@@ -710,6 +712,7 @@ function App() {
           href: "#",
           active: false,
           disabled: false,
+          icon: "done",
           dropdown: true,
           dropdownItemsList: [
             {
@@ -719,6 +722,7 @@ function App() {
               href: "/table",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-table-row",
@@ -727,6 +731,7 @@ function App() {
               href: "/tablerow",
               active: false,
               disabled: false,
+              icon: "done",
             },
             {
               id: "dropdown-link-table-cell",
@@ -735,6 +740,7 @@ function App() {
               href: "/tablecell",
               active: false,
               disabled: false,
+              icon: "done",
             },
           ],
         },
@@ -861,6 +867,7 @@ function App() {
           <Route path="/table" element={<TableRoute />} />
           <Route path="/tablerow" element={<TableRowRoute />} />
           <Route path="/tablecell" element={<TableCellRoute />} />
+          <Route path="/grid" element={<GridRoute />} />
         </Routes>
       </div>
     </div>

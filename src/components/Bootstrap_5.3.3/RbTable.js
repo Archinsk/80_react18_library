@@ -25,17 +25,19 @@ function RbTable({
     tableClass += " table-bordered";
   }
 
+  console.log(tableData);
   if (custom) {
-    return <table>{children}</table>;
+    return <table className={tableClass}>{children}</table>;
   } else if (tableData) {
     const rows = tableData.map((rowData, index) => {
       const cells = rowData.map((cellData, index) => {
+        console.log(cellData);
         return (
           <RbTableCell
-            tag={cellData.tag}
-            colspan={cellData.colspan}
-            rowspan={cellData.rowspan}
-            scope={cellData.scope}
+            tag={cellData.tag || "td"}
+            colspan={cellData.colspan || null}
+            rowspan={cellData.rowspan || null}
+            scope={cellData.scope || null}
             key={index}
           >
             {cellData.content}
@@ -44,15 +46,16 @@ function RbTable({
       });
       return <RbTableRow key={index}>{cells}</RbTableRow>;
     });
+    console.log(rows);
     return (
-      <RbTable
+      <table
         striped={striped}
         hover={hover}
         bordered={bordered}
         className={tableClass}
       >
         <tbody>{rows}</tbody>
-      </RbTable>
+      </table>
     );
   } else {
     return null;

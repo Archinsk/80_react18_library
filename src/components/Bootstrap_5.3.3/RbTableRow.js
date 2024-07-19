@@ -9,9 +9,9 @@ function RbTableRow({ children, className, tag }) {
     );
   } else if (tag === "tfoot") {
     return (
-      <thead>
+      <tfoot>
         <tr className={className || null}>{children}</tr>
-      </thead>
+      </tfoot>
     );
   } else {
     return <tr className={className || null}>{children}</tr>;
