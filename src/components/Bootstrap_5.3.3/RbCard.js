@@ -18,7 +18,14 @@ function RbCard({
   imageEndCols,
   custom,
 }) {
-  if (imageFull || imageStart || imageEnd || horizontal) {
+  let cardClass = "card";
+  if (className) {
+    cardClass += ` ${className}`;
+  }
+
+  if (custom) {
+    return <div className={cardClass}>{children}</div>;
+  } else if (imageFull || imageStart || imageEnd || horizontal) {
     return (
       <RbCardWithImages
         className={className}
@@ -33,44 +40,31 @@ function RbCard({
       </RbCardWithImages>
     );
   } else {
-    let cardClass = "card";
-    if (className) {
-      cardClass += ` ${className}`;
-    }
+    let headerContent;
+    let bodyContent = children;
+    let footerContent;
 
-    if (custom) {
-      return <div className={cardClass}>{children}</div>;
-    } else {
-      let headerContent;
-      let bodyContent;
-      let footerContent;
-
-      if (header && footer && !noBody && children.length === 3) {
+    if (header && footer && !noBody && children.length === 3) {
+      headerContent = children[0];
+      bodyContent = children[1];
+      footerContent = children[2];
+    } else if (children.length === 2) {
+      if (header && !noBody && !footer) {
         headerContent = children[0];
         bodyContent = children[1];
-        footerContent = children[2];
-      } else if (children.length === 2) {
-        if (header && !noBody && !footer) {
-          headerContent = children[0];
-          bodyContent = children[1];
-        } else if (footer && !noBody && !header) {
-          bodyContent = children[0];
-          footerContent = children[1];
-        } else {
-          bodyContent = children;
-        }
-      } else {
-        bodyContent = children;
+      } else if (!header && !noBody && footer) {
+        bodyContent = children[0];
+        footerContent = children[1];
       }
-
-      return (
-        <div className={cardClass}>
-          {header ? <RbCardHeader>{headerContent}</RbCardHeader> : null}
-          {!noBody ? <RbCardBody>{bodyContent}</RbCardBody> : null}
-          {footer ? <RbCardFooter>{footerContent}</RbCardFooter> : null}
-        </div>
-      );
     }
+
+    return (
+      <div className={cardClass}>
+        {header ? <RbCardHeader>{headerContent}</RbCardHeader> : null}
+        {!noBody ? <RbCardBody>{bodyContent}</RbCardBody> : null}
+        {footer ? <RbCardFooter>{footerContent}</RbCardFooter> : null}
+      </div>
+    );
   }
 }
 

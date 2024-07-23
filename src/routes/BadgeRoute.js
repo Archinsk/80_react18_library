@@ -22,10 +22,8 @@ function BadgeRoute() {
         disabled: false,
         badge: {
           theme: "danger",
-          pill: false,
-          notNullDisplay: true,
-          value: 25,
-          max: 99,
+          className: "ms-2",
+          text: 25,
         },
       },
     ],
@@ -33,31 +31,23 @@ function BadgeRoute() {
 
   const defaultBadge = {
     theme: "danger",
-    pill: false,
-    notNullDisplay: true,
-    value: 25,
-    max: 99,
+    className:
+      "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger",
+    text: 25,
   };
 
   return (
     <>
-      Badge Route
+      <h2>Badge</h2>
       <h3>Варианты использования</h3>
+      <div className="use-case-title">Без темы</div>
+      <RbBadge>Важно!</RbBadge>
       <div className="use-case-title">Без value, с темой</div>
       <RbBadge theme="info">Важно!</RbBadge>
       <div className="use-case-title">Скруглённый, с темой</div>
-      <RbBadge theme="warning" pill>
+      <RbBadge theme="warning" className="rounded-pill">
         Внимание
       </RbBadge>
-      <div className="use-case-title">Со значением</div>
-      <RbBadge value="10" />
-      <div className="use-case-title">
-        С указанием максимального значения и его превышением
-      </div>
-      <RbBadge value="120" theme="danger" max="99" />
-      <div className="use-case-title">С отображением нулевого значения</div>
-      <RbBadge value="0" theme="danger" />
-      <div className="use-case-title">Без отображения нулевого значения</div>
       <RbBadge value="0" theme="danger" notNullDisplay />
       <div className="use-case-title">Внутри пункта навигации</div>
       <RbNav tag="ul" className="navbar-nav" itemsList={defaultNav.itemsList} />

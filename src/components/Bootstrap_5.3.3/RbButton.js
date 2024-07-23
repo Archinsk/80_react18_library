@@ -73,13 +73,9 @@ function RbButton({
       ) : null}
       {!(icon && square) ? <span>{children}</span> : null}
       {badge ? (
-        <RbBadge
-          theme={badge.theme}
-          pill={badge.pill}
-          notNullDisplay={badge.notNullDisplay}
-          value={badge.value}
-          max={badge.max}
-        />
+        <RbBadge theme={badge.theme} className={badge.className}>
+          {badge.text}
+        </RbBadge>
       ) : null}
     </button>
   );

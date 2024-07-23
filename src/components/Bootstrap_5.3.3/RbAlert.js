@@ -3,18 +3,16 @@
 import React from "react";
 import RbButton from "./RbButton";
 
-function RbAlert({ children, className, theme = "secondary", closeButton }) {
+function RbAlert({ children, className, theme, closeButton }) {
   let alertClass = "alert";
-  if (theme) {
-    alertClass += ` alert-${theme}`;
-  }
   if (className) {
     alertClass += ` ${className}`;
   }
-  if (closeButton) {
-    alertClass += " alert-dismissible fade show";
+  if (theme) {
+    alertClass += ` alert-${theme}`;
   }
   if (closeButton) {
+    alertClass += " alert-dismissible fade show";
     return (
       <div class={alertClass} role="alert">
         {children}
