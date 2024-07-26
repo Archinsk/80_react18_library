@@ -111,7 +111,25 @@ function IconRoute() {
       <div className="use-case-title">
         Внутри пунктов меню (Navlink, ButtonLink, DropdownItem)
       </div>
-      <RbNav tag="ul" className="navbar-nav" itemsList={defaultNav.itemsList} />
+      <RbNav
+        tag="ul"
+        className="navbar-nav bg-dark-subtle"
+        itemsList={defaultNav.itemsList}
+      />
+      <div className="use-case-title">Стилизованная через классы</div>
+      <div>
+        Lor
+        <RbIcon
+          name="favorite"
+          className="px-2 py-1 bg-info-subtle rounded-2 border border-info text-primary"
+        />
+        em ip
+        <RbIcon
+          name="star"
+          className="px-2 py-1 bg-warning rounded-circle border border-2 border-danger text-danger"
+        />
+        sum dolor.
+      </div>
     </>
   );
 }

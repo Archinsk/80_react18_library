@@ -6,11 +6,14 @@ function NavLinkRoute() {
     <>
       <h2>NavLink</h2>
       <h3>Варианты использования</h3>
+      <div className="use-case-title">
+        С указанием типа (ссылка-роутер, обычная, активатор Bootstrap-действия)
+      </div>
       <RbNav>
+        <RbNavLink href="/nav">Ссылка-роутер</RbNavLink>
         <RbNavLink type="a" href="https://ya.ru">
           Обычная ссылка
         </RbNavLink>
-        <RbNavLink href="/nav">Ссылка-роутер</RbNavLink>
         <RbNavLink href="/nav" disabled>
           Отключенная
         </RbNavLink>
@@ -18,6 +21,10 @@ function NavLinkRoute() {
           С иконкой
         </RbNavLink>
       </RbNav>
+      <div className="use-case-title">
+        С указанием Bootstrap-действия и его цели (выпадающий список, модальное
+        окно, таб-вкладка)
+      </div>
     </>
   );
 }

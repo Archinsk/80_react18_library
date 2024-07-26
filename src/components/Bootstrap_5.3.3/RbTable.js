@@ -31,10 +31,9 @@ function RbTable({
   } else if (tableData) {
     const rows = tableData.map((rowData, index) => {
       const cells = rowData.map((cellData, index) => {
-        console.log(cellData);
         return (
           <RbTableCell
-            tag={cellData.tag || "td"}
+            tag={cellData.tag || null}
             colspan={cellData.colspan || null}
             rowspan={cellData.rowspan || null}
             scope={cellData.scope || null}
@@ -46,7 +45,6 @@ function RbTable({
       });
       return <RbTableRow key={index}>{cells}</RbTableRow>;
     });
-    console.log(rows);
     return (
       <table
         striped={striped}

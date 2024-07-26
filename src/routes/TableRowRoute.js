@@ -39,6 +39,21 @@ function TableRowRoute() {
           </RbTableRow>
         </tbody>
       </RbTable>
+      <div className="use-case-title">Стилизованная через классы</div>
+      <RbTable custom bordered>
+        <tbody>
+          <RbTableRow className="border-3 border-danger">
+            <RbTableCell>Ячейка_1</RbTableCell>
+            <RbTableCell>Ячейка_2</RbTableCell>
+            <RbTableCell>Ячейка_3</RbTableCell>
+          </RbTableRow>
+          <RbTableRow className="text-center text-uppercase fst-italic">
+            <RbTableCell>Ячейка_4</RbTableCell>
+            <RbTableCell>Ячейка_5</RbTableCell>
+            <RbTableCell>Ячейка_6</RbTableCell>
+          </RbTableRow>
+        </tbody>
+      </RbTable>
     </>
   );
 }

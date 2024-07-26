@@ -13,17 +13,15 @@ function PreloaderRoute() {
       <RbPreloader theme="danger" backdropColored />
       <div className="use-case-title">Тип "grow"</div>
       <RbPreloader type="grow" />
-      <div className="use-case-title">С комментарием</div>
-      <RbPreloader comment="Загрузка приложения" />
+      <div className="use-case-title">С текстом</div>
+      <RbPreloader>Загрузка приложения</RbPreloader>
       <div className="use-case-title">
-        С комментарием, цветом темы и цветом комментария
+        С текстом, цветом темы и цветом текста
       </div>
-      <RbPreloader
-        comment="Загрузка приложения"
-        theme="info"
-        commentColor="danger"
-      />
-      <div className="use-case-title">size="sm"</div>
+      <RbPreloader theme="info" textColor="danger">
+        Загрузка приложения
+      </RbPreloader>
+      <div className="use-case-title">Уменьшенный (используется в кнопках)</div>
       <RbPreloader size="sm" />
       <div className="use-case-title">
         Поверх содержимого родителя (position: absolute)
@@ -41,7 +39,9 @@ function PreloaderRoute() {
           facilis nisi nulla? Adipisci amet consequuntur dolores officiis optio
           sint sit!
         </p>
-        <RbPreloader comment="Загрузка..." theme="primary" absolute />
+        <RbPreloader theme="primary" absolute>
+          Загрузка...
+        </RbPreloader>
       </div>
       <div className="use-case-title">Поверх содержимого родителя, с фоном</div>
       <div
@@ -61,12 +61,9 @@ function PreloaderRoute() {
           facilis nisi nulla? Adipisci amet consequuntur dolores officiis optio
           sint sit!
         </p>
-        <RbPreloader
-          comment="Загрузка..."
-          theme="primary"
-          absolute
-          backdropColored
-        />
+        <RbPreloader theme="primary" absolute backdropColored>
+          Загрузка...
+        </RbPreloader>
       </div>
       <div className="use-case-title">
         Поверх содержимого родителя, с размытием нижележащего контента
@@ -84,12 +81,9 @@ function PreloaderRoute() {
           facilis nisi nulla? Adipisci amet consequuntur dolores officiis optio
           sint sit!
         </p>
-        <RbPreloader
-          comment="Загрузка..."
-          theme="dark"
-          absolute
-          backdropBlurred
-        />
+        <RbPreloader theme="dark" absolute backdropBlurred>
+          Загрузка...
+        </RbPreloader>
       </div>
       <div className="use-case-title">
         Поверх содержимого родителя, тонированный фон с размытием нижележащего
@@ -112,13 +106,31 @@ function PreloaderRoute() {
           facilis nisi nulla? Adipisci amet consequuntur dolores officiis optio
           sint sit!
         </p>
-        <RbPreloader
-          comment="Загрузка..."
-          theme="light"
-          absolute
-          backdropColored
-          backdropBlurred
-        />
+        <RbPreloader theme="light" absolute backdropColored backdropBlurred>
+          Загрузка...
+        </RbPreloader>
+      </div>
+      <div className="use-case-title">Стилизованный через классы</div>
+      <div
+        className="p-3 position-relative"
+        style={{
+          width: "500px",
+          height: "200px",
+          backgroundColor: "aquamarine",
+        }}
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam,
+          veniam?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
+          facilis nisi nulla? Adipisci amet consequuntur dolores officiis optio
+          sint sit!
+        </p>
+        <RbPreloader className="bg-warning-subtle opacity-75 position-absolute top-0 start-0 w-100 fw-bold text-danger">
+          Загрузка...
+        </RbPreloader>
       </div>
     </>
   );

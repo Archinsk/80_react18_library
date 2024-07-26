@@ -68,7 +68,7 @@ function CardWithImagesRoute() {
           <small>Last updated 3 mins ago</small>
         </p>
       </RbCardWithImages>
-      <div className="use-case-title">Горизонтальная с картинкой слева</div>
+      <div className="use-case-title">Горизонтальная с изображением слева</div>
       <RbCardWithImages horizontal imageStart>
         <img src="images/default.jpg" />
         <>
@@ -81,7 +81,7 @@ function CardWithImagesRoute() {
           </p>
         </>
       </RbCardWithImages>
-      <div className="use-case-title">Горизонтальная с картинкой справа</div>
+      <div className="use-case-title">Горизонтальная с изображением справа</div>
       <RbCardWithImages horizontal imageEnd>
         <>
           <h5 class="card-title">Заголовок карточки</h5>
@@ -111,7 +111,7 @@ function CardWithImagesRoute() {
         <img src="images/default.jpg" />
       </RbCardWithImages>
       <div className="use-case-title">
-        Горизонтальная с картинкой справа и указанием количества колонок под
+        Горизонтальная с изображением слева и указанием количества колонок под
         изображение
       </div>
       <RbCardWithImages horizontal imageStart imageStartCols={2}>

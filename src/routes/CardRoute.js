@@ -9,37 +9,74 @@ function CardRoute() {
     <>
       <h2>Card</h2>
       <h3>Варианты использования</h3>
-      <div className="use-case-title">Упрощенная карточка без пропов</div>
+      <div className="use-case-title">Без пропов</div>
       <RbCard>Содержимое карточки</RbCard>
-      <div className="use-case-title">Упрощенная карточка с хедером</div>
+      <div className="use-case-title">С хедером (принимает 2 потомка)</div>
       <RbCard header>
         <>Содержимое хедера карточки</>
         <>Содержимое тела карточки</>
       </RbCard>
-      <div className="use-case-title">Упрощенная карточка с футером</div>
+      <div className="use-case-title">С футером (принимает 2 потомка)</div>
       <RbCard footer>
         <>Содержимое тела карточки</>
         <>Содержимое футера карточки</>
       </RbCard>
       <div className="use-case-title">
-        Упрощенная карточка с хедером и футером
+        С хедером и футером (принимает 3 потомка)
       </div>
       <RbCard header footer>
         <>Содержимое хедера карточки</>
         <>Содержимое тела карточки</>
         <>Содержимое футера карточки</>
       </RbCard>
-      <div className="use-case-title">
-        Кастомная карточка с хедером и футером
-      </div>
+      <div className="use-case-title">Кастомная, с хедером и футером</div>
       <RbCard custom>
         <RbCardHeader>Содержимое хедера карточки</RbCardHeader>
         <RbCardBody>
-          <p>Первый абзац тела карточки</p>
-          <p>Второй абзац тела карточки</p>
-          <p>Третий абзац тела карточки</p>
+          <h5 className="card-title">Заголовок карточки</h5>
+          <h6 className="card-subtitle mb-2 text-body-secondary">
+            Подзаголовок карточки
+          </h6>
+          <p className="card-title">Первый абзац тела карточки</p>
+          <p className="card-title">Второй абзац тела карточки</p>
+          <p className="card-title">Третий абзац тела карточки</p>
+          <a href="#" className="card-link">
+            Ссылка карточки 1
+          </a>
+          <a href="#" className="card-link">
+            Ссылка карточки 2
+          </a>
         </RbCardBody>
         <RbCardFooter>Содержимое футера карточки</RbCardFooter>
+      </RbCard>
+      <div className="use-case-title">
+        Кастомная, стилизованная через классы
+      </div>
+      <RbCard
+        custom
+        className="w-50 text-center rounded-4 bg-warning-subtle shadow"
+      >
+        <RbCardHeader className="rounded-top-4 bg-info-subtle">
+          Содержимое хедера карточки
+        </RbCardHeader>
+        <RbCardBody>
+          <h5 className="card-title">Заголовок карточки</h5>
+          <h6 className="card-subtitle mb-2 text-body-secondary">
+            Подзаголовок карточки
+          </h6>
+          <p className="card-title">Первый абзац тела карточки</p>
+          <p className="card-title">Второй абзац тела карточки</p>
+          <p className="card-title">Третий абзац тела карточки</p>
+          <a href="#" className="card-link">
+            Ссылка карточки 1
+          </a>
+          <a href="#" className="card-link">
+            Ссылка карточки 2
+          </a>
+        </RbCardBody>
+        <RbCardFooter className="rounded-bottom-4 bg-dark text-white">
+          Содержимое футера карточки
+        </RbCardFooter>
       </RbCard>
       <div className="use-case-title">
         Карточка с изображениями (в том числе горизонтальая)

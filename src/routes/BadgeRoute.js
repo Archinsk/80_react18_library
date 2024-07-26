@@ -40,21 +40,28 @@ function BadgeRoute() {
     <>
       <h2>Badge</h2>
       <h3>Варианты использования</h3>
-      <div className="use-case-title">Без темы</div>
+      <div className="use-case-title">Без пропов</div>
       <RbBadge>Важно!</RbBadge>
-      <div className="use-case-title">Без value, с темой</div>
+      <div className="use-case-title">С темой</div>
       <RbBadge theme="info">Важно!</RbBadge>
       <div className="use-case-title">Скруглённый, с темой</div>
       <RbBadge theme="warning" className="rounded-pill">
         Внимание
       </RbBadge>
-      <RbBadge value="0" theme="danger" notNullDisplay />
       <div className="use-case-title">Внутри пункта навигации</div>
-      <RbNav tag="ul" className="navbar-nav" itemsList={defaultNav.itemsList} />
+      <RbNav
+        tag="ul"
+        className="navbar-nav bg-dark-subtle"
+        itemsList={defaultNav.itemsList}
+      />
       <div className="use-case-title">Внутри кнопки</div>
       <RbButton theme="secondary" badge={defaultBadge}>
         Сообщения
       </RbButton>
+      <div className="use-case-title">Стилизованный через классы</div>
+      <RbBadge className="bg-dark-subtle border-start border-5 border-danger rounded-0">
+        Важно!
+      </RbBadge>
     </>
   );
 }

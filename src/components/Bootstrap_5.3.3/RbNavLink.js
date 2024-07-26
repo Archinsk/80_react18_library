@@ -9,6 +9,7 @@ import "./RbNavLink.scss";
 
 function RbNavLink({
   children,
+  className,
   type,
   href,
   active,
@@ -17,22 +18,21 @@ function RbNavLink({
   badge,
   additionalClasses,
   withoutNavLinkClass,
-  className,
   dataBsToggle,
   dataBsTarget,
   role,
 }) {
   let navLinkClass = "";
+  if (className) {
+    navLinkClass += " " + className;
+  }
   if (!withoutNavLinkClass) {
-    navLinkClass = "nav-link";
+    navLinkClass += " nav-link";
   }
   if (disabled) {
     navLinkClass += " disabled";
   } else if (active) {
     navLinkClass += " active";
-  }
-  if (className) {
-    navLinkClass += " " + className;
   }
 
   let iconComponent;
@@ -42,6 +42,7 @@ function RbNavLink({
         name={typeof icon === "string" ? icon : icon.name}
         format={icon.format}
         type={icon.type}
+        className={icon.className}
       />
     );
   }

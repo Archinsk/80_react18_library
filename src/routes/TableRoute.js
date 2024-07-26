@@ -162,10 +162,13 @@ function TableRoute() {
           </RbTableRow>
         </tbody>
       </RbTable>
-      <div className="use-case-title">
-        Таблица с данными, переданными через проп
-      </div>
+      <div className="use-case-title">C данными, переданными через проп</div>
       <RbTable tableData={defaultTable.itemsList} bordered />
+      <div className="use-case-title">Стилизованная через классы</div>
+      <RbTable
+        tableData={defaultTable.itemsList}
+        className="table-dark table-borderless table-sm align-middle text-center"
+      />
     </>
   );
 }

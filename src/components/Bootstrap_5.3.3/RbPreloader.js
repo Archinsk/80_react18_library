@@ -4,54 +4,56 @@ import "./RbPreloader.scss";
 function RbPreloader({
   children,
   className,
-  comment,
+  text,
   theme,
-  commentColor,
+  textColor,
   type,
   size,
   absolute,
   backdropColored,
   backdropBlurred,
 }) {
-  let containerClass =
-    "h-100 d-flex flex-column justify-content-center align-items-center";
-  if (absolute) {
-    containerClass += " preloader-absolute";
-    if (backdropBlurred) {
-      containerClass += " backdrop-blurred";
-    }
+  let containerClass = "preloader-container";
+  if (className) {
+    containerClass += ` ${className}`;
+  }
+  if (backdropBlurred) {
+    containerClass += " backdrop-blurred";
   }
   if (backdropColored) {
     containerClass += " backdrop-colored";
   }
+  if (absolute) {
+    containerClass += " preloader-absolute";
+  }
   let preloaderClass = "";
-  if (type) {
-    preloaderClass += "spinner-" + type;
+  if (type === "grow") {
+    preloaderClass += "spinner-grow";
   } else {
     preloaderClass += "spinner-border";
   }
   if (theme) {
-    preloaderClass += " text-" + theme;
+    preloaderClass += ` text-${theme}`;
   }
-  if (size) {
-    if (type) {
-      preloaderClass += " spinner-" + type + size;
+  if (size === "sm") {
+    if (type === "grow") {
+      preloaderClass += " spinner-grow-sm";
     } else {
-      preloaderClass += " spinner-border-" + size;
+      preloaderClass += " spinner-border-sm";
     }
   }
-  let commentClass = "";
-  if (commentColor) {
-    commentClass = `text-${commentColor}`;
+  let textClass = "";
+  if (textColor) {
+    textClass = `text-${textColor}`;
   } else if (theme) {
-    commentClass = `text-${theme}`;
+    textClass = `text-${theme}`;
   }
   return (
     <div className={containerClass}>
       <div className={preloaderClass} role="status">
         <span className="visually-hidden">Loading...</span>
       </div>
-      {comment ? <div className={commentClass}>{comment}</div> : null}
+      {children ? <div className={textClass}>{children}</div> : null}
     </div>
   );
 }

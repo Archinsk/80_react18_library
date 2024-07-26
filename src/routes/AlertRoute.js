@@ -5,10 +5,21 @@ function AlertRoute() {
     <>
       <h2>Alert</h2>
       <h3>Варианты использования</h3>
-      <RbAlert>Alert без пропсов</RbAlert>
-      <RbAlert theme="danger">Alert c темой "danger"</RbAlert>
+      <div className="use-case-title">Без пропов</div>
+      <RbAlert>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </RbAlert>
+      <div className="use-case-title">С темой</div>
+      <RbAlert theme="danger">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </RbAlert>
+      <div className="use-case-title">С кнопкой закрытия</div>
       <RbAlert theme="warning" closeButton>
-        Alert c кнопкой закрытия
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </RbAlert>
+      <div className="use-case-title">Стилизованный через классы</div>
+      <RbAlert className="bg-info text-white border-primary border-3 rounded-pill">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </RbAlert>
     </>
   );

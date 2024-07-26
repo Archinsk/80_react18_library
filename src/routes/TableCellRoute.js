@@ -88,6 +88,30 @@ function TableCellRoute() {
           </RbTableRow>
         </tbody>
       </RbTable>
+      <div className="use-case-title">Стилизованная через классы</div>
+      <RbTable custom bordered>
+        <tbody>
+          <RbTableRow>
+            <RbTableCell className="rounded-3 bg-warning-subtle w-50">
+              Ячейка_1. Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Omnis repellat culpa quod provident aliquam amet molestias
+              ab, ipsam voluptate beatae! Sed esse ex in, beatae nulla commodi
+              doloribus est iure? Obcaecati, voluptate.
+            </RbTableCell>
+            <RbTableCell className="border-3 border-success">
+              Ячейка_2
+            </RbTableCell>
+            <RbTableCell className="align-middle text-center">
+              Ячейка_3
+            </RbTableCell>
+          </RbTableRow>
+          <RbTableRow>
+            <RbTableCell className="fw-bold fs-italic">Ячейка_4</RbTableCell>
+            <RbTableCell>Ячейка_4</RbTableCell>
+            <RbTableCell>Ячейка_6</RbTableCell>
+          </RbTableRow>
+        </tbody>
+      </RbTable>
     </>
   );
 }

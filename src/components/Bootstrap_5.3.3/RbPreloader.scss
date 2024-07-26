@@ -1,12 +1,22 @@
-.preloader-absolute {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.preloader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
 .backdrop-colored {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 .backdrop-blurred {
   backdrop-filter: blur(0.25rem);
+}
+
+.preloader-absolute {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
