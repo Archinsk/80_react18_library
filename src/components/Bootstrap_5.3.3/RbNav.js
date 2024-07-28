@@ -81,14 +81,13 @@ function RbNav({
         return (
           <RbNavLink
             key={navItem.id}
+            className={navItem.className}
             type={navItem.type}
             href={navItem.href}
             active={navItem.active}
             disabled={navItem.disabled}
             icon={navItem.icon}
             badge={navItem.badge}
-            additionalClasses={navItem.additionalClasses}
-            windowData={windowData}
           >
             {navItem.name}
           </RbNavLink>

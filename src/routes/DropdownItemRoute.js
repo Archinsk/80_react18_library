@@ -7,6 +7,9 @@ function DropdownItemRoute() {
     <>
       <h2>DropdownItem</h2>
       <h3>Варианты использования</h3>
+      <div className="use-case-title">
+        Базовые типы (ссылка, ссылка-роутер, активная, отключенная, с иконкой)
+      </div>
       <RbDropdownMenu custom className="show position-static">
         <RbDropdownItem type="a" href="https://ya.ru">
           Обычная ссылка
@@ -20,6 +23,23 @@ function DropdownItemRoute() {
         </RbDropdownItem>
         <RbDropdownItem href="/icon" icon="star">
           С иконкой
+        </RbDropdownItem>
+      </RbDropdownMenu>
+      <div className="use-case-title">
+        Базовые типы (ссылка, ссылка-роутер, активная, отключенная, с иконкой)
+      </div>
+      <RbDropdownMenu custom className="show position-static">
+        <RbDropdownItem type="a" href="https://ya.ru">
+          Обычная
+        </RbDropdownItem>
+        <RbDropdownItem href="/dropdownitem" className="bg-info text-white">
+          Стилизация 1
+        </RbDropdownItem>
+        <RbDropdownItem
+          href="/nav"
+          className="bg-warning rounded-end border berder-start border-3"
+        >
+          Стилизация 2
         </RbDropdownItem>
       </RbDropdownMenu>
     </>

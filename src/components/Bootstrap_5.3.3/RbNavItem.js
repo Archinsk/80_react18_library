@@ -146,7 +146,6 @@ function RbNavItem({
           withoutNavLinkClass={isNestedDropdown}
           role="button"
           dataBsToggle="dropdown"
-          ariaExpanded="false"
         >
           {children}
         </RbNavLink>

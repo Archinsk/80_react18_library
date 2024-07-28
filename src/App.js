@@ -491,7 +491,7 @@ function App() {
               href: "/navlink",
               active: false,
               disabled: false,
-              icon: "done",
+              icon: "verified",
             },
             {
               id: "dropdown-link-dropdown-menu",

@@ -5,36 +5,48 @@ import "./RbDropdownItem.scss";
 import RbIcon from "./RbIcon";
 import { Link } from "react-router-dom";
 
-function RbDropdownItem({ children, type, href, active, disabled, icon }) {
-  let navLinkClass = "dropdown-item";
-  if (disabled) {
-    navLinkClass += " disabled";
-  } else if (active) {
-    navLinkClass += " active";
+function RbDropdownItem({
+  children,
+  className,
+  type,
+  href,
+  active,
+  disabled,
+  icon,
+}) {
+  let dropItemClass = "dropdown-item";
+  if (className) {
+    dropItemClass += ` ${className}`;
   }
+  if (disabled) {
+    dropItemClass += " disabled";
+  } else if (active) {
+    dropItemClass += " active";
+  }
+
+  let iconComponent;
+  if (icon) {
+    iconComponent = (
+      <RbIcon
+        name={typeof icon === "string" ? icon : icon.name}
+        format={icon.format}
+        type={icon.type}
+        className={icon.className}
+      />
+    );
+  }
+
   if (type === "a") {
     return (
-      <a href={href} className={navLinkClass}>
-        {icon ? (
-          <RbIcon
-            name={typeof icon === "string" ? icon : icon.name}
-            format={icon.format}
-            type={icon.type}
-          />
-        ) : null}
+      <a href={href} className={dropItemClass}>
+        {icon ? iconComponent : null}
         <span>{children}</span>
       </a>
     );
   } else {
     return (
-      <Link to={href} className={navLinkClass}>
-        {icon ? (
-          <RbIcon
-            name={typeof icon === "string" ? icon : icon.name}
-            format={icon.format}
-            type={icon.type}
-          />
-        ) : null}
+      <Link to={href} className={dropItemClass}>
+        {icon ? iconComponent : null}
         <span>{children}</span>
       </Link>
     );

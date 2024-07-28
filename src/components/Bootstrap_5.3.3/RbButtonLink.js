@@ -15,6 +15,8 @@ function RbButtonLink({
   icon,
   additionalClasses,
   withoutBtnClass,
+  dataBsToggle,
+  dataBsTarget,
 }) {
   let buttonClass = "";
   if (!withoutBtnClass) {
@@ -43,7 +45,12 @@ function RbButtonLink({
   }
 
   return (
-    <a href={href} className={buttonClass}>
+    <a
+      href={href}
+      className={buttonClass}
+      data-bs-toggle={dataBsToggle || null}
+      data-bs-target={dataBsTarget || null}
+    >
       {icon ? (
         <RbIcon
           name={typeof icon === "string" ? icon : icon.name}
