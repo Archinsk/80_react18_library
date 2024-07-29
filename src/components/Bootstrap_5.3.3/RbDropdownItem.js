@@ -4,6 +4,7 @@ import React from "react";
 import "./RbDropdownItem.scss";
 import RbIcon from "./RbIcon";
 import { Link } from "react-router-dom";
+import RbBadge from "./RbBadge";
 
 function RbDropdownItem({
   children,
@@ -13,6 +14,7 @@ function RbDropdownItem({
   active,
   disabled,
   icon,
+  badge,
 }) {
   let dropItemClass = "dropdown-item";
   if (className) {
@@ -36,11 +38,21 @@ function RbDropdownItem({
     );
   }
 
+  let badgeComponent;
+  if (badge) {
+    badgeComponent = (
+      <RbBadge theme={badge.theme} className={badge.className}>
+        {badge.text}
+      </RbBadge>
+    );
+  }
+
   if (type === "a") {
     return (
       <a href={href} className={dropItemClass}>
         {icon ? iconComponent : null}
         <span>{children}</span>
+        {badge ? badgeComponent : null}
       </a>
     );
   } else {
@@ -48,6 +60,7 @@ function RbDropdownItem({
       <Link to={href} className={dropItemClass}>
         {icon ? iconComponent : null}
         <span>{children}</span>
+        {badge ? badgeComponent : null}
       </Link>
     );
   }

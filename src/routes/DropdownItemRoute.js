@@ -21,13 +21,15 @@ function DropdownItemRoute() {
         <RbDropdownItem href="/nav" disabled>
           Отключенная
         </RbDropdownItem>
-        <RbDropdownItem href="/icon" icon="star">
-          С иконкой
+        <RbDropdownItem
+          href="/icon"
+          icon="star"
+          badge={{ className: "ms-2", theme: "success", text: "Значок" }}
+        >
+          С иконкой и значком
         </RbDropdownItem>
       </RbDropdownMenu>
-      <div className="use-case-title">
-        Базовые типы (ссылка, ссылка-роутер, активная, отключенная, с иконкой)
-      </div>
+      <div className="use-case-title">Стилизованный через классы</div>
       <RbDropdownMenu custom className="show position-static">
         <RbDropdownItem type="a" href="https://ya.ru">
           Обычная
@@ -37,7 +39,7 @@ function DropdownItemRoute() {
         </RbDropdownItem>
         <RbDropdownItem
           href="/nav"
-          className="bg-warning rounded-end border berder-start border-3"
+          className="bg-warning rounded-end border border-danger border-3"
         >
           Стилизация 2
         </RbDropdownItem>

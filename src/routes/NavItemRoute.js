@@ -44,11 +44,9 @@ function NavItemRoute() {
       disabled: false,
       icon: "folder",
       badge: {
+        className: "rounded-pill ms-2",
         theme: "danger",
-        pill: true,
-        notNullDisplay: true,
-        value: 25,
-        max: 99,
+        text: 25,
       },
       dropdown: true,
       dropdownItemsList: [

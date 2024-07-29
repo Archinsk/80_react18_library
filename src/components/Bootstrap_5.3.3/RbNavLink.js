@@ -66,6 +66,7 @@ function RbNavLink({
       >
         {icon ? iconComponent : null}
         <span>{children}</span>
+        {badge ? badgeComponent : null}
       </a>
     );
   } else if (type === "modal-link") {
@@ -74,9 +75,11 @@ function RbNavLink({
         targetId={href}
         tag="a"
         icon={icon}
+        badge={badge}
         className={navLinkClass}
         withoutBtnClass
       >
+        {icon ? iconComponent : null}
         <span>{children}</span>
         {badge ? badgeComponent : null}
       </RbModalButton>
@@ -86,6 +89,7 @@ function RbNavLink({
       <Link to={href} className={navLinkClass}>
         {icon ? iconComponent : null}
         <span>{children}</span>
+        {badge ? badgeComponent : null}
       </Link>
     );
   }

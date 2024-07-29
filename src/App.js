@@ -70,11 +70,9 @@ function App() {
           disabled: false,
           icon: "home",
           badge: {
+            className: "rounded-pill ms-2",
             theme: "danger",
-            pill: true,
-            notNullDisplay: true,
-            value: 25,
-            max: 99,
+            text: "25",
           },
         },
         {
@@ -191,11 +189,9 @@ function App() {
           disabled: false,
           icon: "done",
           badge: {
+            className: "rounded-pill ms-2",
             theme: "danger",
-            pill: true,
-            notNullDisplay: true,
-            value: 25,
-            max: 99,
+            text: "25",
           },
           dropdown: true,
           dropdownItemsList: [
@@ -226,11 +222,9 @@ function App() {
               disabled: false,
               icon: "done",
               badge: {
+                classname: "rounded-pill ms-2",
                 theme: "danger",
-                pill: true,
-                notNullDisplay: true,
-                value: 25,
-                max: 99,
+                text: "25",
               },
             },
             {
@@ -336,11 +330,9 @@ function App() {
               disabled: false,
               icon: "folder",
               badge: {
+                className: "rounded-pill ms-2",
                 theme: "danger",
-                pill: true,
-                notNullDisplay: true,
-                value: 25,
-                max: 99,
+                text: "25",
               },
               dropdown: true,
               dropdownItemsList: [
@@ -779,11 +771,9 @@ function App() {
             navLink: "btn-square-xl btn-outline-light",
           },
           badge: {
+            className: "rounded-pill ms-2",
             theme: "danger",
-            pill: true,
-            notNullDisplay: true,
-            value: 25,
-            max: 99,
+            text: 25,
           },
         },
       ],
