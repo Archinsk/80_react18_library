@@ -11,18 +11,22 @@ function CardRoute() {
       <h3>Варианты использования</h3>
       <div className="use-case-title">Без пропов</div>
       <RbCard>Содержимое карточки</RbCard>
-      <div className="use-case-title">С хедером (принимает 2 потомка)</div>
+      <div className="use-case-title">
+        С хедером (принимает 2 дочерних элемента)
+      </div>
       <RbCard header>
         <>Содержимое хедера карточки</>
         <>Содержимое тела карточки</>
       </RbCard>
-      <div className="use-case-title">С футером (принимает 2 потомка)</div>
+      <div className="use-case-title">
+        С футером (принимает 2 дочерних элемента)
+      </div>
       <RbCard footer>
         <>Содержимое тела карточки</>
         <>Содержимое футера карточки</>
       </RbCard>
       <div className="use-case-title">
-        С хедером и футером (принимает 3 потомка)
+        С хедером и футером (принимает 3 дочерних элемента)
       </div>
       <RbCard header footer>
         <>Содержимое хедера карточки</>
@@ -84,75 +88,6 @@ function CardRoute() {
       <div>
         См. <Link to="/cardwithimages">CardWithImages</Link>
       </div>
-      {/* <div className="use-case-title">Горизонтальная с картинкой слева</div>
-      <RbCard horizontal>
-        <>Слот хедера карточки</>
-        <>Слот тела карточки</>
-        <>Слот футера карточки</>
-      </RbCard>
-      <div className="use-case-title">Горизонтальная с картинкой справа</div>
-      <RbCard horizontal>
-        <>Слот хедера карточки</>
-        <>Слот тела карточки</>
-        <>Слот футера карточки</>
-      </RbCard>
-      <div className="use-case-title">
-        Горизонтальная с картинкой справа и указанием количества колонок под
-        изображение
-      </div> */}
-      {/* <div className="use-case-title">
-        Горизонтальная с изображениями слева и справа
-      </div>
-      <RbCard imageStart imageEnd horizontal>
-        <img src="images/default.jpg" />
-        <>
-          <p>Содержание тела карточки</p>
-          <p>Продолжение содержания тела карточки</p>
-        </>
-        <img src="images/default.jpg" className="img-fluid rounded-end" />
-      </RbCard> */}
-      {/* <div className="use-case-title">
-        Горизонтальная с изображениями слева и справа и указанием количества
-        колонок под каждое изображение
-      </div>
-      <RbCard horizontal>
-        <>Слот хедера карточки</>
-        <>Слот тела карточки</>
-        <>Слот футера карточки</>
-      </RbCard>
-      <RbCard horizontal>
-        <>Слот хедера карточки</>
-        <>Слот тела карточки</>
-        <>Слот футера карточки</>
-      </RbCard> */}
-
-      {/* <div>С хедером и футером</div>
-      <RbCard header footer>
-        <template>Хедер карточки</template>
-        <template>Тело карточки</template>
-        <template>Футер карточки</template>
-      </RbCard>
-      <div>Без хедера и футера, изображение сверху</div>
-      <RbCard imagePosition="top">
-        <template>
-          <img src="images/default.jpg" style="height: calc(100% - 4rem)" />
-        </template>
-        <template>Тело карточки</template>
-      </RbCard>
-      <div>Без хедера и футера, изображение снизу</div>
-      <RbCard imagePosition="bottom">
-        <template>
-          <img src="images/default.jpg" style="height: calc(100% - 4rem)" />
-        </template>
-        <template>Тело карточки</template>
-      </RbCard>
-      <div>Без хедера и футера, изображение на всю карточку</div>
-      <RbCard no-body imagePosition="full">
-        <template>
-          <img src="images/default.jpg" className="card-img" />
-        </template>
-        <div className="card-text">Текст поверх карточки</div>
-      </RbCard> */}
     </>
   );
 }

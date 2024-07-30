@@ -44,7 +44,7 @@ function BadgeRoute() {
       <RbBadge>Важно!</RbBadge>
       <div className="use-case-title">С темой</div>
       <RbBadge theme="info">Важно!</RbBadge>
-      <div className="use-case-title">Скруглённый, с темой</div>
+      <div className="use-case-title">C темой, скругленный через классы</div>
       <RbBadge theme="warning" className="rounded-pill">
         Внимание
       </RbBadge>

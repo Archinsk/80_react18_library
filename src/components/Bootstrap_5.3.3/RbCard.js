@@ -45,16 +45,12 @@ function RbCard({
     let footerContent;
 
     if (header && footer && !noBody && children.length === 3) {
-      headerContent = children[0];
-      bodyContent = children[1];
-      footerContent = children[2];
+      [headerContent, bodyContent, footerContent] = children;
     } else if (children.length === 2) {
       if (header && !noBody && !footer) {
-        headerContent = children[0];
-        bodyContent = children[1];
+        [headerContent, bodyContent] = children;
       } else if (!header && !noBody && footer) {
-        bodyContent = children[0];
-        footerContent = children[1];
+        [bodyContent, footerContent] = children;
       }
     }
 

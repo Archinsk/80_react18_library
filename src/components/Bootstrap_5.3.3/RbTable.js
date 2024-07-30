@@ -25,7 +25,6 @@ function RbTable({
     tableClass += " table-bordered";
   }
 
-  console.log(tableData);
   if (custom) {
     return <table className={tableClass}>{children}</table>;
   } else if (tableData) {

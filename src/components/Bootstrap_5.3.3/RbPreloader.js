@@ -4,7 +4,6 @@ import "./RbPreloader.scss";
 function RbPreloader({
   children,
   className,
-  text,
   theme,
   textColor,
   type,
@@ -26,12 +25,7 @@ function RbPreloader({
   if (absolute) {
     containerClass += " preloader-absolute";
   }
-  let preloaderClass = "";
-  if (type === "grow") {
-    preloaderClass += "spinner-grow";
-  } else {
-    preloaderClass += "spinner-border";
-  }
+  let preloaderClass = type === "grow" ? "spinner-grow" : "spinner-border";
   if (theme) {
     preloaderClass += ` text-${theme}`;
   }

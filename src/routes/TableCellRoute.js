@@ -106,7 +106,7 @@ function TableCellRoute() {
             </RbTableCell>
           </RbTableRow>
           <RbTableRow>
-            <RbTableCell className="fw-bold fs-italic">Ячейка_4</RbTableCell>
+            <RbTableCell className="fw-bold fst-italic">Ячейка_4</RbTableCell>
             <RbTableCell>Ячейка_4</RbTableCell>
             <RbTableCell>Ячейка_6</RbTableCell>
           </RbTableRow>

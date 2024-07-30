@@ -1,17 +1,12 @@
 import React from "react";
 
 function RbTableRow({ children, className, tag }) {
-  if (tag === "thead") {
+  const Container = ["thead", "tfoot"].includes(tag) ? tag : null;
+  if (Container) {
     return (
-      <thead>
+      <Container>
         <tr className={className || null}>{children}</tr>
-      </thead>
-    );
-  } else if (tag === "tfoot") {
-    return (
-      <tfoot>
-        <tr className={className || null}>{children}</tr>
-      </tfoot>
+      </Container>
     );
   } else {
     return <tr className={className || null}>{children}</tr>;

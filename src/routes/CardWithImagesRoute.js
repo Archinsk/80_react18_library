@@ -5,33 +5,6 @@ function CardWithImagesRoute() {
     <>
       <h2>CardWithImages</h2>
       <h3>Варианты использования</h3>
-      {/* 
-      
-      <div className="use-case-title">
-        Горизонтальная с картинкой справа и указанием количества колонок под
-        изображение
-      </div>
-      
-      <div className="use-case-title">
-        Горизонтальная с изображениями слева и справа и указанием количества
-        колонок под каждое изображение
-      </div>
-      <RbCardWithImages horizontal>
-        <>Слот хедера карточки</>
-        <>Слот тела карточки</>
-        <>Слот футера карточки</>
-      </RbCardWithImages>
-      <RbCardWithImages horizontal>
-        <>Слот хедера карточки</>
-        <>Слот тела карточки</>
-        <>Слот футера карточки</>
-      </RbCardWithImages>{" "}
-      <div>С хедером и футером</div>
-      <RbCardWithImages header footer>
-        <template>Хедер карточки</template>
-        <template>Тело карточки</template>
-        <template>Футер карточки</template>
-      </RbCardWithImages> */}
       <div className="use-case-title">
         Без хедера и футера, изображение сверху
       </div>

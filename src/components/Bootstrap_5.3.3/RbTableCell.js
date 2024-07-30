@@ -1,29 +1,18 @@
 import React from "react";
 
 function RbTableCell({ children, className, tag, colspan, rowspan, scope }) {
-  if (tag === "th") {
-    return (
-      <th
-        colSpan={colspan || null}
-        rowSpan={rowspan || null}
-        scope={scope || null}
-        className={className || null}
-      >
-        {children}
-      </th>
-    );
-  } else {
-    return (
-      <td
-        colSpan={colspan || null}
-        rowSpan={rowspan || null}
-        scope={scope || null}
-        className={className || null}
-      >
-        {children}
-      </td>
-    );
-  }
+  const Tag = tag === "th" ? "th" : "td";
+
+  return (
+    <Tag
+      colSpan={colspan || null}
+      rowSpan={rowspan || null}
+      scope={scope || null}
+      className={className || null}
+    >
+      {children}
+    </Tag>
+  );
 }
 
 export default RbTableCell;

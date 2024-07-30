@@ -93,16 +93,12 @@ function RbCardWithImages({
       );
     } else {
       if (imageStart && imageEnd && children.length === 3) {
-        imageStartContainer = children[0];
-        bodyContent = children[1];
-        imageEndContainer = children[2];
+        [imageStartContainer, bodyContent, imageEndContainer] = children;
       } else if (children.length === 2) {
         if (imageStart && !imageEnd) {
-          imageStartContainer = children[0];
-          bodyContent = children[1];
+          [imageStartContainer, bodyContent] = children;
         } else if (imageEnd && !imageStart) {
-          bodyContent = children[0];
-          imageEndContainer = children[1];
+          [bodyContent, imageEndContainer] = children;
         }
       }
       if (imageStartContainer) {
