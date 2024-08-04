@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.example-container {
+  display: inline-block;
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+}
+
+.example {
+  position: absolute;
+  left: 2.5rem;
+  top: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.24rem;
+  background-color: grey;
+  color: white;
+  transition: all 1s;
+}
+
+.size:hover {
+  width: 8rem;
+  height: 8rem;
+}
+
+.opacity:hover {
+  opacity: 0;
+}
+
+.outline {
+  outline-offset: 0.25rem;
+  outline: 0.125rem transparent solid;
+}
+.outline:hover {
+  outline-offset: 0.5rem;
+  outline: 0.125rem blue solid;
+}
+
+.border {
+  border: 0.125rem transparent solid;
+}
+.border:hover {
+  border: 0.5rem blue solid;
+}
+
+.shadow:hover {
+  box-shadow: 0.25rem 0.25rem 0.5rem black;
+}
