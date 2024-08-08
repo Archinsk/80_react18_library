@@ -1,0 +1,168 @@
+:root {
+  --normal-level-color: grey;
+  --upper-level-color: lightgrey;
+  --lower-level-color: darkgrey;
+  --accent-color: blue;
+  --padding: 1rem;
+  --gap: 1rem;
+  --border: 1px solid black;
+  --border-radius: var(--border-radius);
+  --button-height: 1rem;
+  --border-radius: 0.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  border: var(--border);
+  width: var(--button-height);
+  height: var(--button-height);
+  border-radius: var(--border-radius);
+}
+
+.buttons-group {
+  display: flex;
+  gap: var(--gap);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 25%;
+  padding: var(--padding);
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  border: var(--border);
+  border-radius: calc(var(--border-radius) + var(--padding));
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  width: 75%;
+  padding: var(--padding);
+  gap: var(--gap);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+  border: var(--border);
+  border-radius: calc(var(--border-radius) + var(--padding));
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.item-property {
+  padding: var(--padding);
+}
+
+:root[data-theme="neumorphism"] {
+  --accent-color: lightblue;
+  --normal-level-color: darkgrey;
+  --upper-level-color: lightgrey;
+  --lower-level-color: grey;
+  --button-height: 2.25rem;
+  --border: none;
+  --border-radius: 1.125rem;
+  --outer-shadow: 4px 4px 4px 0 black;
+  --inner-shadow: inset 4px 4px 4px 0 black;
+  --outer-light: 4px 4px 4px 0 white;
+  --inner-light: inset 4px 4px 4px 0 white;
+}
+
+:root[data-theme="neumorphism"] .button {
+  box-shadow: var(--outer-shadow), var(--inner-light);
+}
+
+:root[data-theme="neumorphism"] body {
+  background-color: var(--normal-level-color);
+}
+
+:root[data-theme="neumorphism"] .header {
+  background-color: var(--accent-color);
+}
+
+:root[data-theme="neumorphism"] .sidebar-item,
+:root[data-theme="neumorphism"] .card {
+  background-color: var(--upper-level-color);
+}
+
+:root[data-theme="neumorphism"] .sidebar-item:not(.active) .buttons-group,
+:root[data-theme="neumorphism"] .card:not(.active) .buttons-group {
+  display: none;
+}
+
+:root[data-theme="neumorphism"] .sidebar-item.active,
+:root[data-theme="neumorphism"] .card.active {
+  background-color: var(--lower-level-color);
+  box-shadow: var(--inner-shadow), var(--outer-light);
+}
+
+:root[data-theme="neumorphism"] .sidebar-item.active .button,
+:root[data-theme="neumorphism"] .card.active .button {
+  background-color: var(--normal-level-color);
+}
+
+:root[data-theme="neumorphism"] .sidebar-item:not(.active):last-child,
+:root[data-theme="neumorphism"] .card:not(.active):last-child {
+  background-color: var(--normal-level-color);
+}
+
+:root[data-theme="neumorphism"]
+  .sidebar-item:not(.active):last-child
+  .buttons-group,
+:root[data-theme="neumorphism"] .card:not(.active):last-child .buttons-group {
+  display: flex;
+}
+
+:root[data-theme="neumorphism"] .sidebar-item:not(.active):last-child .button,
+:root[data-theme="neumorphism"] .card:not(.active):last-child .button {
+  background-color: var(--normal-level-color);
+}
+
+:root[data-theme="neumorphism"] .sidebar-item:not(.active):last-child .button,
+:root[data-theme="neumorphism"] .card:not(.active):last-child .button {
+  background-color: var(--upper-level-color);
+}
