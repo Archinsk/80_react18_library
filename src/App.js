@@ -50,6 +50,7 @@ import TableRoute from "./routes/TableRoute";
 import TableRowRoute from "./routes/TableRowRoute";
 import TableCellRoute from "./routes/TableCellRoute";
 import GridRoute from "./routes/GridRoute";
+import VarsRoute from "./routes/VarsRoute";
 
 function App() {
   const headerData = {
@@ -776,6 +777,14 @@ function App() {
             text: 25,
           },
         },
+        {
+          id: "nav-link-test-badge",
+          name: "Vars-test",
+          type: "router-link",
+          href: "/vars",
+          active: false,
+          disabled: false,
+        },
       ],
     },
   };
@@ -858,6 +867,7 @@ function App() {
           <Route path="/tablerow" element={<TableRowRoute />} />
           <Route path="/tablecell" element={<TableCellRoute />} />
           <Route path="/grid" element={<GridRoute />} />
+          <Route path="/vars" element={<VarsRoute />} />
         </Routes>
       </div>
     </div>

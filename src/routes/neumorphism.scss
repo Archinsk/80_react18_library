@@ -1,0 +1,207 @@
+:root {
+  --normal-level-color: grey;
+  --upper-level-color: lightgrey;
+  --lower-level-color: darkgrey;
+  --accent-color: blue;
+  --padding: 1rem;
+  --gap: 1rem;
+  --border: 1px solid black;
+  --border-radius: var(--border-radius);
+  --button-height: 1rem;
+  --border-radius: 0.25rem;
+}
+
+/** {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}*/
+
+.vars-route {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+  }
+
+  .main {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding);
+    border: var(--border);
+    width: var(--button-height);
+    height: var(--button-height);
+    border-radius: var(--border-radius);
+  }
+
+  .buttons-group {
+    display: flex;
+    gap: var(--gap);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: 25%;
+    padding: var(--padding);
+  }
+
+  .sidebar-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+    border: var(--border);
+    border-radius: calc(var(--border-radius) + var(--padding));
+  }
+
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    width: 75%;
+    padding: var(--padding);
+    gap: var(--gap);
+  }
+
+  .card-custom {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+    border: var(--border);
+    border-radius: calc(var(--border-radius) + var(--padding));
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+
+  .item-property {
+    padding: var(--padding);
+  }
+}
+
+:root[data-theme="neumorphism"] {
+  --hue: 220;
+  --saturation: 35%;
+  --lightness: 93%;
+
+  --normal-level-color: hsla(
+    var(--hue),
+    var(--saturation),
+    var(--lightness),
+    1
+  );
+
+  //--levels-lightness-offset: 2%;
+  --levels-lightness-offset: 5%;
+  --upper-level-color: hsla(
+    var(--hue),
+    var(--saturation),
+    calc(var(--lightness) + var(--levels-lightness-offset)),
+    1
+  );
+  --lower-level-color: hsla(
+    var(--hue),
+    var(--saturation),
+    calc(var(--lightness) - var(--levels-lightness-offset)),
+    1
+  );
+
+  --accent-color-hue-offset: 5;
+  --accent-color-saturation-offset: 25%;
+  --accent-color-lightness-offset: -10%;
+  --accent-color-opacity: 1;
+  --accent-color: hsla(
+    calc(var(--hue) + var(--accent-color-hue-offset)),
+    calc(var(--saturation) + var(--accent-color-saturation-offset)),
+    calc(var(--lightness) + var(--accent-color-lightness-offset)),
+    var(--accent-color-opacity)
+  );
+
+  --button-height: 2.25rem;
+  --border: none;
+  // --border-radius: 1.125rem;
+  --border-radius: 0.25rem;
+
+  --shadow-offset: 0.2rem;
+  --shadow-blur: 0.35rem;
+  --shadow-spread: 0rem;
+  --shadow-opacity: 0.5;
+  --shadow-color: hsla(0, 0%, 0%, var(--shadow-opacity));
+  --light-color: hsla(0, 0%, 100%, var(--shadow-opacity));
+  --outer-shadow: var(--shadow-offset) var(--shadow-offset) var(--shadow-blur)
+    var(--shadow-spread) var(--shadow-color);
+  --inner-shadow: inset var(--shadow-offset) var(--shadow-offset)
+    var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+  --outer-light: calc(-1 * var(--shadow-offset)) calc(-1 * var(--shadow-offset))
+    var(--shadow-blur) var(--shadow-spread) var(--light-color);
+  --inner-light: inset calc(-1 * var(--shadow-offset))
+    calc(-1 * var(--shadow-offset)) var(--shadow-blur) var(--shadow-spread)
+    var(--light-color);
+
+  .vars-route {
+    background-color: var(--normal-level-color);
+    //filter: contrast(0.5);
+
+    .button {
+      box-shadow: var(--outer-light), var(--outer-shadow);
+    }
+
+    .header {
+      background-color: var(--accent-color);
+
+      .button {
+        background-color: var(--upper-level-color);
+      }
+    }
+
+    .sidebar-item,
+    .card-custom {
+      background-color: var(--upper-level-color);
+      box-shadow: var(--outer-light), var(--outer-shadow);
+
+      &.active {
+        background-color: var(--lower-level-color);
+        box-shadow: var(--inner-shadow), var(--inner-light);
+
+        .button {
+          background-color: var(--normal-level-color);
+        }
+      }
+
+      &:not(.active) {
+        &:not(:last-child) .buttons-group {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        background-color: var(--normal-level-color);
+        box-shadow: none;
+
+        .button {
+          background-color: var(--upper-level-color);
+        }
+      }
+    }
+  }
+}
